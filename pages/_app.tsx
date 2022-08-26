@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import "../styles/globals.css";
 import "../styles/tailwind.css";
-import { darkTheme, GlobalStyles, lightTheme } from "../themeConfig";
+import { darkTheme, GlobalStyles, lightTheme } from "../ThemeConfig";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [theme, setTheme] = useState("light");

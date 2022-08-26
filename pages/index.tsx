@@ -5,14 +5,14 @@ import Head from "next/head";
 const Index: NextPage = () => {
   return (
     <>
-      {/* <Head>
+      <Head>
         <title>{profile.name}</title>
         <meta
           name="description"
           content={`${profile.name.split(" ")[0]}'s Portfolio`}
         />
         <link rel="icon" href="/favicon.ico" />
-      </Head> */}
+      </Head>
 
       <section className="main-area">
         <p>Test</p>
