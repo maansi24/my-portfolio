@@ -31,6 +31,13 @@
     },
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "tailwind.settings.fontSizes.js",
+    "tailwind.settings.screens.js",
+    "tailwind.settings.js"
+  ],
   "exclude": ["node_modules"]
 }

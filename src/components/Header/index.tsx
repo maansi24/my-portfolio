@@ -9,7 +9,7 @@ import React from "react";
 const StyledHeader = styled.header<{ shrink: boolean }>`
   width: 100%;
   height: ${({ shrink }) => (shrink ? "66px" : "76px")};
-  background: ${({ shrink }) => (shrink ? "black" : "transparent")};
+  background: ${({ shrink }) => (shrink ? "rgba(0,0,0,0.95)" : "transparent")};
   position: fixed;
   top: 0;
   left: 0;
@@ -22,12 +22,13 @@ const MenuItemContainer = styled.li<any>``;
 const MenuItem = styled.a<any>`
   color: ${({ shrink, theme }) => (shrink ? theme.body : theme.text)};
   transition: all 0.3s ease-in-out;
+  font-weight: 600;
   &:hover {
     color: ${({ theme }) => theme.colors.primary2};
   }
 `;
 
-const options = ["About", "Research", "Publications", "Contact"];
+const options = ["Home", "About", "Research", "Publications", "Contact"];
 
 const Header = () => {
   const { y } = useWindowScroll();
@@ -57,10 +58,8 @@ const Header = () => {
                   </MenuItem>
                 </MenuItemContainer>
               ))}
+              <Button>Download CV</Button>
             </ul>
-          </div>
-          <div>
-            <Button label="Download CV" />
           </div>
         </div>
       </div>

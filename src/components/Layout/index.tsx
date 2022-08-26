@@ -21,7 +21,6 @@ const BackgroundImage = styled.img<any>`
 
 const StyledMain = styled.main`
   padding-left: ${asideWidth}px;
-  padding-top: 100px;
 `;
 
 const Layout = ({
@@ -38,10 +37,7 @@ const Layout = ({
       </Head>
       <Header />
       <BackgroundImage imgSrc={profile.image} />
-      <StyledMain>
-        <button onClick={toggleTheme}>Switch Theme</button>
-        {children}
-      </StyledMain>
+      <StyledMain>{children}</StyledMain>
     </>
   );
 };

@@ -1,3 +1,4 @@
+import Hero from "@sections/Hero";
 import { profile } from "@utils/data";
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -16,6 +17,7 @@ const Index: NextPage = () => {
       </Head>
 
       <section className="main-area">
+        <Hero />
         <p>Test</p>
         <p>Test</p>
         <p>Test</p>

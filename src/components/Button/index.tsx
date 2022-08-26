@@ -1,14 +1,55 @@
+import React, { ReactNode } from "react";
 import styled from "styled-components";
-import React from "react";
 
 interface ButtonInterface {
-  label: string;
+  children: ReactNode;
+  disabled?: boolean;
+  size?: "sm" | "md" | "lg";
 }
 
-const StyledButton = styled.button``;
+const ButtonStyled = styled.button<Partial<ButtonInterface>>`
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  padding: 8px 16px;
+  color: white;
+  background-color: orange;
+  border: 1px solid;
+  border-color: orange;
+  border-radius: 20px;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-weight: ${({ size }) => (size === "sm" ? "normal" : "bold")};
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
 
-const Button: React.FC<ButtonInterface> = ({ label }) => {
-  return <StyledButton>{label}</StyledButton>;
+  &:hover:not(:disabled),
+  &:active:not(:disabled),
+  &:focus {
+    outline: 0;
+    color: white;
+    border-color: salmon;
+    background-color: salmon;
+    cursor: pointer;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    filter: saturate(60%);
+    cursor: not-allowed;
+  }
+`;
+
+const Button: React.FC<ButtonInterface> = ({
+  children,
+  size = "md",
+  disabled = false,
+}) => {
+  return (
+    <ButtonStyled size={size} disabled={disabled}>
+      {children}
+    </ButtonStyled>
+  );
 };
 
 export default Button;
