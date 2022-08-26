@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useWindowScroll } from "react-use";
 import styled from "styled-components";
+import React from "react";
 
 const StyledHeader = styled.header<{ shrink: boolean }>`
   width: 100%;
@@ -20,7 +21,7 @@ const MenuItemContainer = styled.li<any>``;
 
 const MenuItem = styled.a<any>`
   color: ${({ shrink, theme }) => (shrink ? theme.body : theme.text)};
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
   &:hover {
     color: ${({ theme }) => theme.colors.primary2};
   }

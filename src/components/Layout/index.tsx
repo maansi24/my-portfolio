@@ -3,6 +3,7 @@ import Head from "next/head";
 import { ReactNode } from "react";
 import styled from "styled-components";
 import Header from "../Header";
+import React from "react";
 
 const asideWidth = 500;
 

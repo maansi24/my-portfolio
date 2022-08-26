@@ -5,7 +5,9 @@ import { ThemeProvider } from "styled-components";
 import "../styles/globals.css";
 import "../styles/tailwind.css";
 import { darkTheme, GlobalStyles, lightTheme } from "../ThemeConfig";
+import React from "react";
 
+// eslint-disable-next-line require-jsdoc
 function MyApp({ Component, pageProps }: AppProps) {
   const [theme, setTheme] = useState("light");
 
