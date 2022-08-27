@@ -21,7 +21,7 @@ const ButtonStyled = styled.button<Partial<ButtonInterface>>`
   font-size: 16px;
   font-weight: ${({ size }) => (size === "sm" ? "normal" : "bold")};
   text-decoration: none;
-  transition: all 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 
   &:hover:not(:disabled),
   &:active:not(:disabled),

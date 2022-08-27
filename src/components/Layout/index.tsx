@@ -1,26 +1,34 @@
 import Head from "next/head";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import styled from "styled-components";
 import Header from "../Header";
 import React from "react";
-import { useStateContext } from "@contexts/ContextProvider";
-
-const asideWidth = 500;
+import { useWindowSize } from "react-use";
 
 const AsideProfilePic = styled.img<any>`
-  width: ${asideWidth}px;
+  width: ${({ width }) => width}px;
   height: 100%;
   background: url("/images/profile_pic.jpg");
   background-repeat: no-repeat;
-  background-size: contain;
-  padding-top: 100%;
+  background-size: cover;
+  background-position: center;
   position: fixed;
   top: 0;
   left: 0;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    height: 100%;
+    background: url(/images/profile_pic.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 156%;
+    position: static;
+  }
 `;
 
-const StyledMain = styled.main`
-  padding-left: ${asideWidth}px;
+const StyledMain = styled.main<any>`
+  padding-left: ${({ width }) => width}px;
 `;
 
 const Layout = ({
@@ -30,8 +38,18 @@ const Layout = ({
   children: ReactNode;
   toggleTheme: () => void;
 }) => {
-  const { isMobile } = useStateContext();
-  console.log({ isMobile });
+  const { width } = useWindowSize();
+
+  const [asideWidth, setAsideWidth] = useState(500);
+
+  const asideWidthFxn = (w: number) => {
+    if (w < 1536) setAsideWidth(500);
+    if (w < 1200) setAsideWidth(320);
+  };
+
+  useEffect(() => {
+    if (window !== undefined) asideWidthFxn(width);
+  }, [width]);
 
   return (
     <>
@@ -39,8 +57,8 @@ const Layout = ({
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
       </Head>
       <Header />
-      <AsideProfilePic />
-      <StyledMain>{children}</StyledMain>
+      <AsideProfilePic width={asideWidth} />
+      <StyledMain width={asideWidth}>{children}</StyledMain>
     </>
   );
 };

@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { useIntersection } from "react-use";
+import React from "react";
 import { useStateContext } from "@contexts/ContextProvider";
 import SectionTitle from "@components/SectionTitle";
 import { profile } from "@utils/data";
@@ -29,24 +28,11 @@ const AboutData = [
 ];
 
 const About = () => {
-  const { isMobile, setActiveSection } = useStateContext();
-  const intersectionRef = React.useRef(null);
-  const intersection = useIntersection(intersectionRef, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 1,
-  });
-
-  useEffect(() => {
-    if (!(intersection && intersection.intersectionRatio < 1)) {
-      setActiveSection("about");
-    }
-  }, [intersection]);
+  const { isMobile } = useStateContext();
 
   return (
     <section
       id="about"
-      ref={intersectionRef}
       className="relative min-h-screen flex items-center justify-center border-b border-b-gray-300"
     >
       <div className="max-w-xl">

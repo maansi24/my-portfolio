@@ -1,30 +1,13 @@
-import { useStateContext } from "@contexts/ContextProvider";
 import { profile } from "@utils/data";
-import React, { useEffect } from "react";
-import { useIntersection } from "react-use";
+import React from "react";
 
 const Hero = () => {
-  const { activeSection, setActiveSection } = useStateContext();
-  const intersectionRef = React.useRef(null);
-  const intersection = useIntersection(intersectionRef, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 1,
-  });
-
-  console.log({ activeSection });
-
-  useEffect(() => {
-    if (!(intersection && intersection.intersectionRatio < 1)) {
-      setActiveSection("home");
-    }
-  }, [intersection]);
   return (
     <section
       id="home"
       className="relative min-h-screen flex items-center justify-center border-b border-b-gray-300"
     >
-      <div className="max-w-xl">
+      <div className="max-w-xl px-4 sm:px-0">
         <h1 className="text-6xl font-bold">{profile.name}</h1>
         <p className="text-sm">
           Hello I am a UI/UX Designer from San Francisco. I have rich experience
@@ -42,7 +25,7 @@ const Hero = () => {
           ))}
         </ul>
       </div>
-      <div className="absolute -rotate-90 -right-48">
+      <div className="absolute -rotate-90 -right-48 select-none -z-1">
         <h4 className="text-10xl font-extrabold text-gray-100">MAANSI</h4>
       </div>
     </section>
