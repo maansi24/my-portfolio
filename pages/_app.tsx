@@ -6,6 +6,7 @@ import "../styles/globals.css";
 import "../styles/tailwind.css";
 import { darkTheme, GlobalStyles, lightTheme } from "../ThemeConfig";
 import React from "react";
+import { ContextProvider } from "@contexts/ContextProvider";
 
 // eslint-disable-next-line require-jsdoc
 function MyApp({ Component, pageProps }: AppProps) {
@@ -16,12 +17,14 @@ function MyApp({ Component, pageProps }: AppProps) {
   };
 
   return (
-    <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
-      <GlobalStyles />
-      <Layout toggleTheme={toggleTheme}>
-        <Component {...pageProps} />
-      </Layout>
-    </ThemeProvider>
+    <ContextProvider>
+      <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
+        <GlobalStyles />
+        <Layout toggleTheme={toggleTheme}>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
+    </ContextProvider>
   );
 }
 

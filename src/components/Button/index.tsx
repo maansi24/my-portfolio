@@ -13,9 +13,9 @@ const ButtonStyled = styled.button<Partial<ButtonInterface>>`
   text-align: center;
   padding: 8px 16px;
   color: white;
-  background-color: orange;
+  background-color: ${({ theme }) => theme.colors.primary2};
   border: 1px solid;
-  border-color: orange;
+  border-color: ${({ theme }) => theme.colors.primary2};
   border-radius: 20px;
   font-family: "Lato", sans-serif;
   font-size: 16px;

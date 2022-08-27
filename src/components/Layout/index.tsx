@@ -1,16 +1,16 @@
-import { profile } from "@utils/data";
 import Head from "next/head";
 import { ReactNode } from "react";
 import styled from "styled-components";
 import Header from "../Header";
 import React from "react";
+import { useStateContext } from "@contexts/ContextProvider";
 
 const asideWidth = 500;
 
-const BackgroundImage = styled.img<any>`
+const AsideProfilePic = styled.img<any>`
   width: ${asideWidth}px;
   height: 100%;
-  background: ${({ imgSrc }) => imgSrc && `url(${imgSrc})`};
+  background: url("/images/profile_pic.jpg");
   background-repeat: no-repeat;
   background-size: contain;
   padding-top: 100%;
@@ -30,13 +30,16 @@ const Layout = ({
   children: ReactNode;
   toggleTheme: () => void;
 }) => {
+  const { isMobile } = useStateContext();
+  console.log({ isMobile });
+
   return (
     <>
       <Head>
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
       </Head>
       <Header />
-      <BackgroundImage imgSrc={profile.image} />
+      <AsideProfilePic />
       <StyledMain>{children}</StyledMain>
     </>
   );

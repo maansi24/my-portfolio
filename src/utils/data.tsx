@@ -13,8 +13,13 @@ const iconProps = {
 };
 
 export const profile = {
-  name: "Maansi Singla",
+  name: "Maansi Aggarwal",
   age: 25,
+  email: "manavkaushal756@gmail.com",
+  phone: "+91 95012 06323",
+  address: "Sector 20, Chandigarh",
+  country: "India",
+  website: "test.com",
   image:
     "https://images.pexels.com/photos/5477855/pexels-photo-5477855.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   social: [

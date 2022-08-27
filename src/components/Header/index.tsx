@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { useWindowScroll } from "react-use";
 import styled from "styled-components";
 import React from "react";
+import Link from "next/link";
+// import { useRouter } from "next/router";
 
 const StyledHeader = styled.header<{ shrink: boolean }>`
   width: 100%;
@@ -28,9 +30,16 @@ const MenuItem = styled.a<any>`
   }
 `;
 
-const options = ["Home", "About", "Research", "Publications", "Contact"];
+const menuItems = [
+  { id: 1, title: "Home", href: "home" },
+  { id: 2, title: "About", href: "about" },
+  { id: 3, title: "Research", href: "research" },
+  { id: 4, title: "Publications", href: "publications" },
+  { id: 5, title: "Contact", href: "contact" },
+];
 
 const Header = () => {
+  // const router = useRouter();
   const { y } = useWindowScroll();
   const [shrink, setShrink] = useState<boolean>(false);
 
@@ -51,13 +60,15 @@ const Header = () => {
           </div>
           <div className="menu-container">
             <ul className="flex items-center space-x-6">
-              {options.map((option: string) => (
-                <MenuItemContainer key={option} shrink={shrink}>
-                  <MenuItem href="#" shrink={shrink}>
-                    {option}
-                  </MenuItem>
-                </MenuItemContainer>
-              ))}
+              {menuItems.map(
+                (item: { id: number; title: string; href: string }) => (
+                  <MenuItemContainer key={item.id} shrink={shrink}>
+                    <Link href={`#${item.href}`}>
+                      <MenuItem shrink={shrink}>{item.title}</MenuItem>
+                    </Link>
+                  </MenuItemContainer>
+                )
+              )}
               <Button>Download CV</Button>
             </ul>
           </div>
