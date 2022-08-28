@@ -1,6 +1,7 @@
 import About from "@sections/About";
 import Experience from "@sections/Experience";
 import Hero from "@sections/Hero";
+import Portfolio from "@sections/Portfolio";
 import Skills from "@sections/Skills";
 import { profile } from "@utils/data";
 import type { NextPage } from "next";
@@ -24,6 +25,7 @@ const Index: NextPage = () => {
         <About />
         <Skills />
         <Experience />
+        <Portfolio />
       </main>
     </>
   );

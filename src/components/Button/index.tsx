@@ -8,6 +8,7 @@ interface ButtonInterface {
   size?: "sm" | "md" | "lg";
   sx?: string;
   rounded?: boolean;
+  noPadding?: boolean;
 }
 
 const ButtonStyled = styled.button<Partial<ButtonInterface>>`
@@ -43,7 +44,8 @@ const ButtonStyled = styled.button<Partial<ButtonInterface>>`
         return "transparent";
     }
   }};
-  padding: ${({ size }) => {
+  padding: ${({ size, noPadding }) => {
+    if (noPadding) return "0 0";
     switch (size) {
       case "sm":
         return "0.25rem 1rem";
@@ -80,6 +82,14 @@ const ButtonStyled = styled.button<Partial<ButtonInterface>>`
           return "transparent";
       }
     }};
+    text-decoration: ${({ variant }) => {
+      switch (variant) {
+        case "ghost":
+          return "underline";
+        default:
+          return "none";
+      }
+    }};
     cursor: pointer;
   }
 
@@ -97,6 +107,7 @@ const Button: React.FC<ButtonInterface> = ({
   disabled = false,
   sx = "",
   rounded = true,
+  noPadding = false,
 }) => {
   return (
     <ButtonStyled
@@ -104,6 +115,7 @@ const Button: React.FC<ButtonInterface> = ({
       size={size}
       disabled={disabled}
       rounded={rounded}
+      noPadding={noPadding}
       className={sx}
     >
       {children}

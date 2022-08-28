@@ -9,5 +9,5 @@ module.exports = {
     screens: settingsScreens,
     fontSize: settingsFontSizes,
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/line-clamp")],
 };

@@ -22,7 +22,7 @@ const StyledDescription = styled.p``;
 const SectionTitle = ({
   name = "Section Name",
   title = "Section Title",
-  description = "Section Description",
+  description = "",
 }: {
   name: string;
   title: string;
