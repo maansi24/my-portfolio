@@ -15,10 +15,11 @@ const PortfolioCardStyled = styled.div<any>`
   background: black ${({ bg }) => `url(${bg})`} center center no-repeat;
   background-size: 300px;
   filter: grayscale(0);
-  transition: background 0.8s;
+  transition: 0.8s ease-in-out;
+  transition-property: background, filter;
   & .innerContainer {
-    height: "100%";
-    width: "100%";
+    height: 90%;
+    width: 88%;
     background: transparent;
     border-radius: 10px;
     transition: border 1s;
@@ -51,6 +52,11 @@ const PortfolioCardStyled = styled.div<any>`
     background-size: 600px;
     filter: grayscale(100%);
 
+    & .innerContainer {
+      &:before {
+        opacity: 0.2;
+      }
+    }
     & h2 {
       opacity: 1;
     }

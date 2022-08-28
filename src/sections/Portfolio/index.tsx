@@ -21,6 +21,13 @@ const portfolioData = [
     link: "test",
     ctaText: "Explore",
   },
+  {
+    id: 2,
+    title: "Title",
+    desc: "Test description Test description",
+    image:
+      "https://images.pexels.com/photos/13200712/pexels-photo-13200712.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  },
 ];
 
 const Portfolio = () => {
@@ -41,7 +48,7 @@ const Portfolio = () => {
         </div>
       </div>
       <div
-        className="absolute -rotate-90 -right-[265px] select-none hidden lg:inline-block"
+        className="absolute -rotate-90 -right-[225px] select-none hidden lg:inline-block"
         style={{ zIndex: -1 }}
       >
         <span className="text-8xl font-extrabold text-gray-100 uppercase inline-block">
