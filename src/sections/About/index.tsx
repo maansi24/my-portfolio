@@ -33,15 +33,15 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative min-h-screen flex items-center justify-center border-b border-b-gray-300"
+      className="relative min-h-fit py-20 flex items-center justify-center border-b border-b-gray-300 lg:min-h-screen lg:py-0"
     >
-      <div className="max-w-xl">
+      <div className="max-w-xl px-4 sm:px-0">
         <SectionTitle
           name="About Me"
           title="I Am A Product Designer, Specialized In UI/UX Design &amp; Digital Design"
           description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, seddiam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
         />
-        <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-2">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
           {AboutData.map((about) => (
             <p key={about.key}>
               <span className="font-bold">{about.key}:</span>&nbsp;
@@ -61,7 +61,7 @@ const About = () => {
           ))}
         </div>
       </div>
-      <div className="absolute -rotate-90 -right-20">
+      <div className="absolute -rotate-90 -right-20 select-none -z-1 hidden lg:block">
         <h4 className="text-8xl font-extrabold text-gray-100">ABOUT</h4>
       </div>
     </section>

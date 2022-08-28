@@ -45,6 +45,7 @@ const Layout = ({
   const asideWidthFxn = (w: number) => {
     if (w < 1536) setAsideWidth(500);
     if (w < 1200) setAsideWidth(320);
+    if (w < 1024) setAsideWidth(0);
   };
 
   useEffect(() => {

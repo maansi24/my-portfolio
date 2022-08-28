@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center border-b border-b-gray-300"
+      className="relative min-h-fit py-20 flex items-center justify-center border-b border-b-gray-300 lg:min-h-screen lg:py-0"
     >
       <div className="max-w-xl px-4 sm:px-0">
         <h1 className="text-6xl font-bold">{profile.name}</h1>
@@ -25,7 +25,7 @@ const Hero = () => {
           ))}
         </ul>
       </div>
-      <div className="absolute -rotate-90 -right-48 select-none -z-1">
+      <div className="absolute -rotate-90 -right-48 select-none -z-1 hidden lg:block">
         <h4 className="text-10xl font-extrabold text-gray-100">MAANSI</h4>
       </div>
     </section>
