@@ -1,4 +1,5 @@
 import About from "@sections/About";
+import Experience from "@sections/Experience";
 import Hero from "@sections/Hero";
 import Skills from "@sections/Skills";
 import { profile } from "@utils/data";
@@ -22,6 +23,7 @@ const Index: NextPage = () => {
         <Hero />
         <About />
         <Skills />
+        <Experience />
       </main>
     </>
   );

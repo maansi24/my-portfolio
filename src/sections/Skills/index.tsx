@@ -46,9 +46,9 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="relative min-h-fit py-20 flex items-center justify-center border-b border-b-gray-300 lg:min-h-screen lg:py-0"
+      className="relative min-h-fit py-20 flex items-center justify-center border-b border-b-gray-300 lg:py-32"
     >
-      <div className="max-w-xl px-4 sm:px-0 lg:py-20">
+      <div className="max-w-xl px-4 sm:px-0">
         <SectionTitle
           name="What I Do"
           title="Here Are My All Skills"
@@ -67,9 +67,9 @@ const Skills = () => {
           ))}
         </div>
       </div>
-      <div className="absolute -rotate-90 -right-[145px] select-none hidden lg:inline-block">
+      <div className="absolute -rotate-90 -right-[100px] select-none hidden lg:inline-block">
         <h4 className="text-8xl font-extrabold text-gray-100 uppercase">
-          Services
+          Skills
         </h4>
       </div>
     </section>

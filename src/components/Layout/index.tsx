@@ -15,7 +15,7 @@ const AsideProfilePic = styled.img<any>`
   position: fixed;
   top: 0;
   left: 0;
-
+  border: none;
   @media (max-width: 1024px) {
     width: 100%;
     height: 100%;

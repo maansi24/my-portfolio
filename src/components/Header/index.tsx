@@ -12,11 +12,15 @@ const StyledHeader = styled.header<{ shrink: boolean }>`
   width: 100%;
   height: ${({ shrink }) => (shrink ? "66px" : "76px")};
   background: ${({ shrink }) => (shrink ? "rgba(0,0,0,0.95)" : "transparent")};
+  box-shadow: ${({ shrink }) =>
+    shrink
+      ? "rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px"
+      : ""};
   position: fixed;
   top: 0;
   left: 0;
   transition: all 0.3s ease-in-out;
-  transition-property: height, background;
+  transition-property: height, background, box-shadow;
   z-index: 1000;
 `;
 

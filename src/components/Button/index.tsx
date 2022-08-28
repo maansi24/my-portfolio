@@ -7,6 +7,7 @@ interface ButtonInterface {
   disabled?: boolean;
   size?: "sm" | "md" | "lg";
   sx?: string;
+  rounded?: boolean;
 }
 
 const ButtonStyled = styled.button<Partial<ButtonInterface>>`
@@ -14,23 +15,14 @@ const ButtonStyled = styled.button<Partial<ButtonInterface>>`
   display: inline-block;
   text-align: center;
   border: 1px solid;
-  border-radius: 200px;
   font-family: "Lato", sans-serif;
   font-size: 16px;
   font-weight: ${({ size }) => (size === "sm" ? "normal" : "bold")};
   text-decoration: none;
   transition: all 0.3s ease-in-out;
   transition-property: background-color, color;
-  color: ${({ theme, variant }) => {
-    switch (variant) {
-      case "primary":
-        return theme.colors.body;
-      case "ghost":
-        return theme.colors.text;
-      default:
-        return "transparent";
-    }
-  }};
+  color: white;
+  border-radius: ${({ rounded }) => (rounded ? "200px" : "2px")};
   background: ${({ theme, variant }) => {
     switch (variant) {
       case "primary":
@@ -68,7 +60,6 @@ const ButtonStyled = styled.button<Partial<ButtonInterface>>`
   &:active:not(:disabled),
   &:focus {
     outline: 0;
-    color: ${({ theme }) => theme.colors.primary2};
     border-color: ${({ variant }) => {
       switch (variant) {
         case "primary":
@@ -105,12 +96,14 @@ const Button: React.FC<ButtonInterface> = ({
   size = "md",
   disabled = false,
   sx = "",
+  rounded = true,
 }) => {
   return (
     <ButtonStyled
       variant={variant}
       size={size}
       disabled={disabled}
+      rounded={rounded}
       className={sx}
     >
       {children}

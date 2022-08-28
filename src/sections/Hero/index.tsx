@@ -8,7 +8,7 @@ const Hero = () => {
       className="relative min-h-fit py-20 flex items-center justify-center border-b border-b-gray-300 lg:min-h-screen lg:py-0"
     >
       <div className="max-w-xl px-4 sm:px-0">
-        <h1 className="text-6xl font-bold">{profile.name}</h1>
+        <h1 className="text-5xl font-bold">{profile.name}</h1>
         <p className="text-sm">
           Hello I am a UI/UX Designer from San Francisco. I have rich experience
           of 5+ years in web site design and app design, also I am good at
@@ -25,8 +25,11 @@ const Hero = () => {
           ))}
         </ul>
       </div>
-      <div className="absolute -rotate-90 -right-48 select-none -z-1 hidden lg:block">
-        <h4 className="text-10xl font-extrabold text-gray-100 uppercase">
+      <div
+        className="absolute -rotate-90 -right-40 select-none -z-1 hidden lg:block"
+        style={{ zIndex: -1 }}
+      >
+        <h4 className="text-9xl font-extrabold text-gray-100 uppercase">
           {profile.name.split(" ")[0]}
         </h4>
       </div>
