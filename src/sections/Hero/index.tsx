@@ -26,7 +26,9 @@ const Hero = () => {
         </ul>
       </div>
       <div className="absolute -rotate-90 -right-48 select-none -z-1 hidden lg:block">
-        <h4 className="text-10xl font-extrabold text-gray-100">MAANSI</h4>
+        <h4 className="text-10xl font-extrabold text-gray-100 uppercase">
+          {profile.name.split(" ")[0]}
+        </h4>
       </div>
     </section>
   );

@@ -35,6 +35,11 @@ const About = () => {
       id="about"
       className="relative min-h-fit py-20 flex items-center justify-center border-b border-b-gray-300 lg:min-h-screen lg:py-0"
     >
+      <div className="absolute -rotate-90 -right-20 select-none hidden lg:inline-block">
+        <span className="text-8xl font-extrabold text-gray-100 uppercase inline-block">
+          ABOUT
+        </span>
+      </div>
       <div className="max-w-xl px-4 sm:px-0">
         <SectionTitle
           name="About Me"
@@ -60,9 +65,6 @@ const About = () => {
             </p>
           ))}
         </div>
-      </div>
-      <div className="absolute -rotate-90 -right-20 select-none -z-1 hidden lg:block">
-        <h4 className="text-8xl font-extrabold text-gray-100">ABOUT</h4>
       </div>
     </section>
   );

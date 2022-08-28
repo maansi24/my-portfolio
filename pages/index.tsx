@@ -1,5 +1,6 @@
 import About from "@sections/About";
 import Hero from "@sections/Hero";
+import Skills from "@sections/Skills";
 import { profile } from "@utils/data";
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -20,6 +21,7 @@ const Index: NextPage = () => {
       <main className="main-area">
         <Hero />
         <About />
+        <Skills />
       </main>
     </>
   );
