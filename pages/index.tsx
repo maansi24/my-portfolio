@@ -1,4 +1,5 @@
 import About from "@sections/About";
+import Contact from "@sections/Contact";
 import Experience from "@sections/Experience";
 import Hero from "@sections/Hero";
 import Portfolio from "@sections/Portfolio";
@@ -26,6 +27,7 @@ const Index: NextPage = () => {
         <Skills />
         <Experience />
         <Portfolio />
+        <Contact />
       </main>
     </>
   );

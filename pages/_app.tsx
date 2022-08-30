@@ -8,6 +8,8 @@ import { darkTheme, GlobalStyles, lightTheme } from "../ThemeConfig";
 import React from "react";
 import { ContextProvider } from "@contexts/ContextProvider";
 import Head from "next/head";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // eslint-disable-next-line require-jsdoc
 function MyApp({ Component, pageProps }: AppProps) {
@@ -29,6 +31,17 @@ function MyApp({ Component, pageProps }: AppProps) {
             />
           </Head>
           <Component {...pageProps} />
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={true}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss={false}
+            draggable
+            pauseOnHover
+          />
         </Layout>
       </ThemeProvider>
     </ContextProvider>

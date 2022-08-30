@@ -9,6 +9,8 @@ interface ButtonInterface {
   sx?: string;
   rounded?: boolean;
   noPadding?: boolean;
+  type?: "button" | "submit";
+  props?: any;
 }
 
 const ButtonStyled = styled.button<Partial<ButtonInterface>>`
@@ -21,8 +23,8 @@ const ButtonStyled = styled.button<Partial<ButtonInterface>>`
   text-decoration: none;
   transition: all 0.3s ease-in-out;
   transition-property: background-color, color;
-  color: black;
-  border-radius: ${({ rounded }) => (rounded ? "200px" : "2px")};
+  color: white;
+  border-radius: ${({ rounded }) => (rounded ? "200px" : "4px")};
   background: ${({ theme, variant }) => {
     switch (variant) {
       case "primary":
@@ -107,6 +109,8 @@ const Button: React.FC<ButtonInterface> = ({
   sx = "",
   rounded = true,
   noPadding = false,
+  type = "button",
+  props,
 }) => {
   return (
     <ButtonStyled
@@ -115,7 +119,9 @@ const Button: React.FC<ButtonInterface> = ({
       disabled={disabled}
       rounded={rounded}
       noPadding={noPadding}
+      type={type}
       className={sx}
+      {...props}
     >
       {children}
     </ButtonStyled>
