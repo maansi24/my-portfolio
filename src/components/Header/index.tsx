@@ -77,8 +77,8 @@ const Header = () => {
                 <SVGStyled
                   src="/images/logo.svg"
                   title="Logo"
-                  width={40}
-                  height={40}
+                  width={70}
+                  height={70}
                   shrink={shrink}
                 />
               </a>

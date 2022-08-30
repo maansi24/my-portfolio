@@ -16,13 +16,12 @@ const ButtonStyled = styled.button<Partial<ButtonInterface>>`
   display: inline-block;
   text-align: center;
   border: 1px solid;
-  font-family: "Lato", sans-serif;
   font-size: 16px;
   font-weight: ${({ size }) => (size === "sm" ? "normal" : "bold")};
   text-decoration: none;
   transition: all 0.3s ease-in-out;
   transition-property: background-color, color;
-  color: white;
+  color: black;
   border-radius: ${({ rounded }) => (rounded ? "200px" : "2px")};
   background: ${({ theme, variant }) => {
     switch (variant) {
