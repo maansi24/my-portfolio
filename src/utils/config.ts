@@ -1,3 +1,4 @@
+const production = process.env.NEXT_PUBLIC_NODE_ENV === "production";
 const iconSize = 20;
 
-export { iconSize };
+export { production, iconSize };

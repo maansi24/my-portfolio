@@ -5,43 +5,47 @@ import React from "react";
 const portfolioData = [
   {
     id: 1,
-    title: "Title",
-    desc: "Test description",
+    title: "Photocatalytic carbon dioxide reduction",
+    desc: "Exploring the role of ultrathin 2D graphitic carbon nitride (g-C3N4)” by Maansi Aggarwal, Soumen Basu, Nagaraj P.Shetti, Mallikarjuna, N.Nadagouda, Eilhann, E.Kwon, Young-Kwon Park, Tejraj M.Aminabhavi",
     image:
-      "https://i.pinimg.com/736x/8f/a0/51/8fa051251f5ac2d0b756027089fbffde--terry-o-neill-al-pacino.jpg",
-    link: "test",
-    ctaText: "Explore",
+      "https://res.cloudinary.com/manavkaushal/image/upload/v1661904520/publication_1_idxfgg.png",
+    link: "https://www.sciencedirect.com/science/article/abs/pii/S1385894721029831?via%3Dihub",
+    ctaText: "Read More",
   },
   {
     id: 2,
-    title: "Title",
-    desc: "Test description Test description Test description Test description Test description",
+    title:
+      "Photocatalytic conversion of CO2 into valuable products using emerging two-dimensional graphene-based nanomaterials",
+    desc: "A step towards sustainability” by Maansi Aggarwal, Soumen Basu, Nagaraj P Shetti, Mallikarjuna N Nadagouda, Tejraj M Aminabhavi",
     image:
-      "https://images.pexels.com/photos/13133195/pexels-photo-13133195.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    link: "test",
-    ctaText: "Explore",
+      "https://res.cloudinary.com/manavkaushal/image/upload/v1661904582/publication_2_azcq1d.png",
+    link: "https://www.sciencedirect.com/science/article/abs/pii/S138589472102982X?via%3Dihub",
+    ctaText: "Read More",
   },
   {
     id: 2,
-    title: "Title",
-    desc: "Test description Test description",
+    title:
+      "Two-dimensional ultrathin metal-based nanosheets for photocatalytic CO2 conversion to solar fuels",
+    desc: "The role of metal-based layers for CO2 conversion and new strategies such as surface modifications, defect generation and heterojunctions to optimize their functionalities",
     image:
-      "https://images.pexels.com/photos/13200712/pexels-photo-13200712.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://res.cloudinary.com/manavkaushal/image/upload/v1661904925/publication_3_vvoian.png",
+    link: "https://www.sciencedirect.com/science/article/pii/S0301479722004893?via%3Dihub",
+    ctaText: "Read More",
   },
 ];
 
 const Portfolio = () => {
   return (
     <section
-      id="portfolio"
+      id="publications"
       className="relative min-h-fit py-20 flex items-center justify-center border-b border-b-gray-300 lg:py-32"
     >
       <div className="max-w-xl px-4 sm:px-0">
         <SectionTitle
-          name="Portfolio"
-          title="See My Works Which Will Amaze You"
+          name="Publications"
+          title="My Publications Which Will Amaze You!"
         />
-        <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2 justify-items-center">
+        <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center">
           {portfolioData.map((portfolio) => (
             <PortfolioCard key={portfolio.id} data={portfolio} />
           ))}

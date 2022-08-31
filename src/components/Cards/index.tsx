@@ -39,15 +39,22 @@ const Card = ({
         </div>
       )}
       {icon && <div className="w-full">{icon}</div>}
-      <div className={classes("mt-4 space-y-1", center ? "text-center" : "")}>
+      <div
+        className={classes(
+          "space-y-1",
+          center && "text-center",
+          icon && "mt-4"
+        )}
+      >
         <h3 className="font-bold">{title}</h3>
-        <p className="text-xs">{description}</p>
+        {description && <p className="text-xs">{description}</p>}
       </div>
       {link && btnText && (
         <div className={classes("mt-4", center ? "text-center mx-auto" : "")}>
           <Button
             size="sm"
             variant="ghost"
+            textColor="black"
             sx={classes("font-bold", center ? "mx-auto" : "")}
           >
             {btnText}

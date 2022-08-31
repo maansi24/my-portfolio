@@ -20,12 +20,12 @@ const StyledTitle = styled.h2``;
 const StyledDescription = styled.p``;
 
 const SectionTitle = ({
-  name = "Section Name",
-  title = "Section Title",
+  name = "",
+  title = "",
   description = "",
 }: {
   name: string;
-  title: string;
+  title?: string;
   description?: string;
 }) => {
   return (

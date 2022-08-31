@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 
 const PortfolioCardStyled = styled.div<any>`
-  height: 350px;
+  height: 200px;
   width: 100%;
   border-radius: 10px;
   overflow: hidden;
@@ -13,10 +13,12 @@ const PortfolioCardStyled = styled.div<any>`
   align-items: center;
   position: relative;
   background: black ${({ bg }) => `url(${bg})`} center center no-repeat;
-  background-size: 300px;
+  background-size: cover;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   filter: grayscale(0);
-  transition: 0.8s ease-in-out;
-  transition-property: background, filter;
+  transition: all 0.8s ease-in-out;
+
   & .innerContainer {
     height: 90%;
     width: 88%;
@@ -49,8 +51,19 @@ const PortfolioCardStyled = styled.div<any>`
   }
   &:hover {
     background: ${({ bg }) => `url(${bg})`} left center no-repeat;
-    background-size: 600px;
+    background-size: 350px;
     filter: grayscale(100%);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      opacity: 0.6;
+    }
 
     & .innerContainer {
       &:before {
@@ -76,11 +89,14 @@ const PortfolioCard = ({ data }: { data: any }) => {
   return (
     <>
       {link ? (
-        <PortfolioCardStyled bg={image} className="shadow-sm hover:shadow-lg">
-          <div className="innerContainer">
-            <h2 className="text-lg line-clamp-1">{title}</h2>
-            <p className="line-clamp-2">{desc}</p>
-          </div>
+        <PortfolioCardStyled
+          bg={image}
+          className="shadow-sm hover:shadow-lg border"
+        >
+          {/* <div className="innerContainer">
+            <h2 className="text-lg line-clamp-2">{title}</h2>
+            <p className="line-clamp-5">{desc}</p>
+          </div> */}
           <div className="button-container">
             <Link href={link}>
               <a target="_blank" rel="noopener noreferrer">
@@ -94,8 +110,8 @@ const PortfolioCard = ({ data }: { data: any }) => {
       ) : (
         <PortfolioCardStyled bg={image} className="shadow-sm hover:shadow-lg">
           <div className="innerContainer">
-            <h2 className="text-lg line-clamp-1">{title}</h2>
-            <p className="line-clamp-2">{desc}</p>
+            <h2 className="text-lg line-clamp-2">{title}</h2>
+            <p className="line-clamp-5">{desc}</p>
           </div>
         </PortfolioCardStyled>
       )}

@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 interface ButtonInterface {
   children: ReactNode;
@@ -10,10 +10,22 @@ interface ButtonInterface {
   rounded?: boolean;
   noPadding?: boolean;
   type?: "button" | "submit";
+  textColor?: string;
+  shine?: boolean;
   props?: any;
 }
 
+const shineAnimation = keyframes`
+	0% {
+		transform: translateX(-200%) rotate(55deg);
+	}
+	100% {
+		transform: translateX(50%) rotate(55deg);
+	}
+`;
+
 const ButtonStyled = styled.button<Partial<ButtonInterface>>`
+  position: relative;
   box-sizing: border-box;
   display: inline-block;
   text-align: center;
@@ -23,7 +35,7 @@ const ButtonStyled = styled.button<Partial<ButtonInterface>>`
   text-decoration: none;
   transition: all 0.3s ease-in-out;
   transition-property: background-color, color;
-  color: white;
+  color: ${({ textColor }) => textColor};
   border-radius: ${({ rounded }) => (rounded ? "200px" : "4px")};
   background: ${({ theme, variant }) => {
     switch (variant) {
@@ -99,6 +111,27 @@ const ButtonStyled = styled.button<Partial<ButtonInterface>>`
     filter: saturate(60%);
     cursor: not-allowed;
   }
+
+  &.shine {
+    overflow: hidden;
+    &:after {
+      content: "";
+      top: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      transform: translateX(-200%) rotate(55deg);
+      animation: ${shineAnimation} 5s infinite;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(128, 186, 232, 0) 99%,
+        rgba(125, 185, 232, 0) 100%
+      );
+    }
+  }
 `;
 
 const Button: React.FC<ButtonInterface> = ({
@@ -110,12 +143,15 @@ const Button: React.FC<ButtonInterface> = ({
   rounded = true,
   noPadding = false,
   type = "button",
+  textColor = "#fff",
+  shine,
   props,
 }) => {
   return (
     <ButtonStyled
       variant={variant}
       size={size}
+      textColor={textColor}
       disabled={disabled}
       rounded={rounded}
       noPadding={noPadding}

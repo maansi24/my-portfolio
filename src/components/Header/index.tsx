@@ -94,7 +94,9 @@ const Header = () => {
                     </MenuItemContainer>
                   )
                 )}
-                <Button>Download CV</Button>
+                <Button size="sm" sx="shine">
+                  Download CV
+                </Button>
               </ul>
             ) : (
               <Hamburger

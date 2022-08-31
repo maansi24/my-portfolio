@@ -1,44 +1,63 @@
 import Card from "@components/Cards";
 import SectionTitle from "@components/SectionTitle";
 import React from "react";
-import { BsGlobe } from "react-icons/bs";
 
 const skillsData = [
   {
     id: 1,
-    icon: <BsGlobe className="w-8 h-8 mx-auto" />,
-    title: "Web Design",
-    description:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor",
-    btnText: "Explore More",
-    btnLink: "test",
+    icon: null,
+    title: "FTIR",
+    description: "",
+    btnText: "",
+    btnLink: "",
   },
   {
-    id: 1,
-    icon: <BsGlobe className="w-8 h-8 mx-auto" />,
-    title: "Web Design",
-    description:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor",
-    btnText: "Explore More",
-    btnLink: "test",
+    id: 2,
+    icon: null,
+    title: "HPLC",
+    description: "",
+    btnText: "",
+    btnLink: "",
   },
   {
-    id: 1,
-    icon: <BsGlobe className="w-8 h-8 mx-auto" />,
-    title: "Web Design",
-    description:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor",
-    btnText: "Explore More",
-    btnLink: "test",
+    id: 3,
+    icon: null,
+    title: "AFM",
+    description: "",
+    btnText: "",
+    btnLink: "",
   },
   {
-    id: 1,
-    icon: <BsGlobe className="w-8 h-8 mx-auto" />,
-    title: "Web Design",
-    description:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor",
-    btnText: "Explore More",
-    btnLink: "test",
+    id: 4,
+    icon: null,
+    title: "UV",
+    description: "",
+    btnText: "",
+    btnLink: "",
+  },
+  {
+    id: 5,
+    icon: null,
+    title: "Circular Dichroism",
+    description: "",
+    btnText: "",
+    btnLink: "",
+  },
+  {
+    id: 6,
+    icon: null,
+    title: "Photo Luminescence",
+    description: "",
+    btnText: "",
+    btnLink: "",
+  },
+  {
+    id: 7,
+    icon: null,
+    title: "Gel Electrophorsis",
+    description: "",
+    btnText: "",
+    btnLink: "",
   },
 ];
 
@@ -51,7 +70,7 @@ const Skills = () => {
       <div className="max-w-xl px-4 sm:px-0">
         <SectionTitle
           name="What I Do"
-          title="Here Are My All Skills"
+          title="Here Are My Instrumental Skills"
           description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, seddiam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
         />
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">

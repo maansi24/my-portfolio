@@ -18,13 +18,13 @@ const AboutData = [
     link: true,
     linkTo: `mailTo: ${profile.email}`,
   },
-  { key: "Address", value: profile.address },
-  {
-    key: "Website",
-    value: profile.website,
-    link: true,
-    linkTo: profile.website,
-  },
+  // { key: "Address", value: profile.address },
+  // {
+  //   key: "Website",
+  //   value: profile.website,
+  //   link: true,
+  //   linkTo: profile.website,
+  // },
 ];
 
 const About = () => {
@@ -59,6 +59,20 @@ const About = () => {
               )}
             </p>
           ))}
+          <p className="col-span-1 sm:col-span-2">
+            <span className="font-bold">Languages:</span>&nbsp;
+            <span className="text-gray-500">
+              {profile.languages.join(", ")}
+            </span>
+          </p>
+          <p className="col-span-1 sm:col-span-2">
+            <span className="font-bold">Address:</span>&nbsp;
+            <span className="text-gray-500">{profile.address}</span>
+          </p>
+          <p className="col-span-1 sm:col-span-2">
+            <span className="font-bold">Website:</span>&nbsp;
+            <span className="text-gray-500">{profile.website}</span>
+          </p>
         </div>
       </div>
       <div

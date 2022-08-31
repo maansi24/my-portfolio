@@ -15,11 +15,12 @@ const iconProps = {
 export const profile = {
   name: "Maansi Aggarwal",
   age: 25,
-  email: "manavkaushal756@gmail.com",
-  phone: "+91 95012 06323",
-  address: "Sector 20, Chandigarh",
+  email: "maansi_2121ch12@iitp.ac.in",
+  phone: "+91 97361 26334",
+  address: "#206, Department of Chemistry, IIT Patna.",
   country: "India",
-  website: "test.com",
+  website: "https://maansi-aggarwal.vercel.app/",
+  languages: ["English", "Hindi"],
   image:
     "https://images.pexels.com/photos/5477855/pexels-photo-5477855.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   social: [
