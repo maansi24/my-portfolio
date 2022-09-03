@@ -40,11 +40,8 @@ const Portfolio = () => {
       id="publications"
       className="relative min-h-fit py-20 flex items-center justify-center border-b border-b-gray-300 lg:py-32"
     >
-      <div className="max-w-xl px-4 sm:px-0">
-        <SectionTitle
-          name="Publications"
-          title="My Publications Which Will Amaze You!"
-        />
+      <div className="max-w-xl w-full px-4 sm:px-0">
+        <SectionTitle name="Publications" title="My Publications" />
         <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center">
           {portfolioData.map((portfolio) => (
             <PortfolioCard key={portfolio.id} data={portfolio} />

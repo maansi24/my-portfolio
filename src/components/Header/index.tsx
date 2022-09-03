@@ -1,12 +1,13 @@
 import Button from "@components/Button";
-import { useEffect, useState } from "react";
-import { useWindowScroll } from "react-use";
+import { useState } from "react";
 import styled from "styled-components";
 import React from "react";
 import Link from "next/link";
 import { useStateContext } from "@contexts/ContextProvider";
 import Hamburger from "hamburger-react";
 import SVG from "react-inlinesvg";
+import { scrollSmoothTo } from "@utils/lib";
+import { menuItems } from "@utils/data";
 
 const StyledHeader = styled.header<{ shrink: boolean }>`
   width: 100%;
@@ -27,7 +28,8 @@ const StyledHeader = styled.header<{ shrink: boolean }>`
 const MenuItemContainer = styled.li<any>``;
 
 const MenuItem = styled.a<any>`
-  color: ${({ shrink, theme }) => (shrink ? theme.body : theme.text)};
+  color: ${({ shrink, theme, active }) =>
+    active ? theme.colors.primary2 : shrink ? theme.body : theme.text};
   font-weight: 600;
   transition: color 0.3s ease-in-out;
   cursor: pointer;
@@ -35,15 +37,11 @@ const MenuItem = styled.a<any>`
   &:hover {
     color: ${({ theme }) => theme.colors.primary2};
   }
-`;
 
-const menuItems = [
-  { id: 1, title: "Home", triggerBy: "home" },
-  { id: 2, title: "About", triggerBy: "about" },
-  { id: 3, title: "Research", triggerBy: "research" },
-  { id: 4, title: "Publications", triggerBy: "publications" },
-  { id: 5, title: "Contact", triggerBy: "contact" },
-];
+  &.active {
+    color: ${({ theme }) => theme.colors.primary2};
+  }
+`;
 
 const SVGStyled = styled(SVG)<any>`
   transition: fill 0.3s ease-in-out;
@@ -53,19 +51,9 @@ const SVGStyled = styled(SVG)<any>`
 `;
 
 const Header = () => {
-  const { isMobile } = useStateContext();
-  const { y } = useWindowScroll();
+  const { isMobile, shrink, setView } = useStateContext();
 
-  const [shrink, setShrink] = useState<boolean>(false);
   const [isOpen, setOpen] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (y > 20) {
-      setShrink(true);
-    } else {
-      setShrink(false);
-    }
-  }, [y]);
 
   return (
     <StyledHeader shrink={shrink}>
@@ -89,9 +77,17 @@ const Header = () => {
               <ul className="flex items-center space-x-6">
                 {menuItems.map(
                   (item: { id: number; title: string; triggerBy: string }) => (
-                    <MenuItemContainer key={item.id} shrink={shrink}>
-                      <MenuItem shrink={shrink}>{item.title}</MenuItem>
-                    </MenuItemContainer>
+                    <a
+                      key={item.id}
+                      onClick={() => {
+                        scrollSmoothTo(item.triggerBy);
+                        setView(item.triggerBy);
+                      }}
+                    >
+                      <MenuItemContainer shrink={shrink}>
+                        <MenuItem shrink={shrink}>{item.title}</MenuItem>
+                      </MenuItemContainer>
+                    </a>
                   )
                 )}
                 <Button size="sm" sx="shine">

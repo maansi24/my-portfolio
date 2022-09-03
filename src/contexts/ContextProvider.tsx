@@ -5,7 +5,7 @@ import React, {
   useEffect,
   useState,
 } from "react";
-import { useWindowSize } from "react-use";
+import { useWindowScroll, useWindowSize } from "react-use";
 
 const StateContext = createContext<any>({
   activeSection: "home",
@@ -17,10 +17,13 @@ const StateContext = createContext<any>({
 
 export const ContextProvider = ({ children }: { children: ReactNode }) => {
   const { width } = useWindowSize();
+  const { y } = useWindowScroll();
 
+  const [shrink, setShrink] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>("home");
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [currentColor, setCurrentColor] = useState<string>("#03C9D7");
+  const [view, setView] = useState("home");
 
   const setColor = (color: string) => {
     setCurrentColor(color);
@@ -35,6 +38,14 @@ export const ContextProvider = ({ children }: { children: ReactNode }) => {
     }
   }, [width]);
 
+  useEffect(() => {
+    if (y > 20) {
+      setShrink(true);
+    } else {
+      setShrink(false);
+    }
+  }, [y]);
+
   return (
     <StateContext.Provider
       value={{
@@ -43,6 +54,9 @@ export const ContextProvider = ({ children }: { children: ReactNode }) => {
         isMobile,
         currentColor,
         setColor,
+        shrink,
+        view,
+        setView,
       }}
     >
       {children}

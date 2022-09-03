@@ -1,5 +1,1 @@
-export const navMenu = [
-  {
-    id: 1,
-  },
-];
+export {};

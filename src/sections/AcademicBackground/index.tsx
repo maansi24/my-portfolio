@@ -73,7 +73,7 @@ const AcademicBackground = () => {
       id="academicBackground"
       className="relative min-h-fit py-20 flex items-center justify-center border-b border-b-gray-300 lg:py-32"
     >
-      <div className="max-w-xl px-4 sm:px-0">
+      <div className="max-w-xl w-full px-4 sm:px-0">
         <SectionTitle name="Academic Background" />
         <div className="mt-4">
           {experienceData.map((exp) => (
