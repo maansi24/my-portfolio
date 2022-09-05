@@ -55,6 +55,12 @@ const Header = () => {
 
   const [isOpen, setOpen] = useState<boolean>(false);
 
+  const downloadCV = () => {
+    if (window && typeof window !== undefined) {
+      window.open("/files/Maansi CV.pdf", "_blank");
+    }
+  };
+
   return (
     <StyledHeader shrink={shrink}>
       <div className="text-white h-full max-w-7xl mx-auto px-4 sm:px-6">
@@ -90,7 +96,7 @@ const Header = () => {
                     </a>
                   )
                 )}
-                <Button size="sm" sx="shine">
+                <Button size="sm" sx="shine" onClick={downloadCV}>
                   Download CV
                 </Button>
               </ul>

@@ -1,7 +1,10 @@
-import { profile } from "@utils/data";
+import { useStateContext } from "@contexts/ContextProvider";
+import { AboutInterface } from "@interfaces/AboutInterface";
+import { AboutData, profile } from "@utils/data";
 import React from "react";
 
 const Hero = () => {
+  const { isMobile } = useStateContext();
   return (
     <section
       id="home"
@@ -22,13 +25,42 @@ const Hero = () => {
           >
             Prof. Prolay das
           </a>{" "}
-          on some application of Carbon dot conjugation with DNA or other
+          on application of Carbon dot conjugation with DNA and other
           biomolecules.
         </p>
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
+          {AboutData.map((about: AboutInterface) => (
+            <p key={about.key}>
+              <span className="font-bold">{about.key}:</span>&nbsp;
+              {about.link ? (
+                <a
+                  href={about.linkTo}
+                  target={!isMobile ? "_blank" : ""}
+                  className="text-gray-500 hover:text-[#c57653]"
+                  rel="noreferrer"
+                >
+                  {about.value}
+                </a>
+              ) : (
+                <span className="text-gray-500">{about.value}</span>
+              )}
+            </p>
+          ))}
+          <p className="col-span-1 sm:col-span-2">
+            <span className="font-bold">Languages:</span>&nbsp;
+            <span className="text-gray-500">
+              {profile.languages.join(", ")}
+            </span>
+          </p>
+          <p className="col-span-1 sm:col-span-2">
+            <span className="font-bold">Address:</span>&nbsp;
+            <span className="text-gray-500">{profile.address}</span>
+          </p>
+        </div>
         <ul className="mt-8 group flex items-center space-x-6">
           {profile.social.map((social) => (
             <li key={social.id} className="icon">
-              <a href={social.title} target="_blank" rel="noopener noreferrer">
+              <a href={social.link} target="_blank" rel="noopener noreferrer">
                 {social.icon}
               </a>
             </li>

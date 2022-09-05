@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React, { ReactNode } from "react";
 import styled, { keyframes } from "styled-components";
 
@@ -12,6 +13,7 @@ interface ButtonInterface {
   type?: "button" | "submit";
   textColor?: string;
   shine?: boolean;
+  onClick?: () => void;
   props?: any;
 }
 
@@ -145,6 +147,7 @@ const Button: React.FC<ButtonInterface> = ({
   type = "button",
   textColor = "#fff",
   shine,
+  onClick,
   props,
 }) => {
   return (
@@ -156,7 +159,8 @@ const Button: React.FC<ButtonInterface> = ({
       rounded={rounded}
       noPadding={noPadding}
       type={type}
-      className={sx}
+      className={classNames(sx, shine && "shine")}
+      onClick={onClick}
       {...props}
     >
       {children}

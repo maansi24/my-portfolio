@@ -8,7 +8,6 @@ import Footer from "@components/Footer";
 import { FaArrowUp } from "react-icons/fa";
 import { useStateContext } from "@contexts/ContextProvider";
 import { scrollSmoothTo } from "@utils/lib";
-import Button from "@components/Button";
 
 const AsideProfilePic = styled.img<any>`
   width: ${({ width }) => width}px;
@@ -70,12 +69,10 @@ const Layout = ({
         <Footer />
       </StyledMain>
       {shrink && (
-        <Button>
-          <FaArrowUp
-            className="w-10 h-10 fixed right-6 bottom-6 text-[#c57653] z-20 cursor-pointer hover:text-black transition duration-300 ease-in-out"
-            onClick={() => scrollSmoothTo("home")}
-          />
-        </Button>
+        <FaArrowUp
+          className="w-10 h-10 fixed right-6 bottom-6 text-white z-20 cursor-pointer hover:bg-[#F5296E] transition duration-300 ease-in-out bg-[#c57653] rounded-full p-3"
+          onClick={() => scrollSmoothTo("home")}
+        />
       )}
     </>
   );

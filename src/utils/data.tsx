@@ -18,19 +18,19 @@ export const profile = {
     {
       id: 1,
       title: "facebook",
-      link: "",
+      link: "https://www.facebook.com/mansi.singla.391",
       icon: <FaFacebookF {...iconProps} style={{ color: "#4267B2" }} />,
     },
     {
       id: 3,
       title: "linkedIn",
-      link: "",
+      link: "https://www.linkedin.com/in/maansi-aggarwal-03a1271b8/",
       icon: <FaLinkedinIn {...iconProps} style={{ color: "#0072b1" }} />,
     },
     {
       id: 4,
       title: "instagram",
-      link: "",
+      link: "https://www.instagram.com/maansingla/",
       icon: <FaInstagram {...iconProps} style={{ color: "#bc2a8d" }} />,
     },
   ],
