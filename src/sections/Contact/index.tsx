@@ -57,7 +57,6 @@ const Contact = () => {
         <SectionTitle
           name="Contact"
           title="Have You Any Project? Please Drop A Message"
-          description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, seddiam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
         />
         <div className="mt-10">
           <div
