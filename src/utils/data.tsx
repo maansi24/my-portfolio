@@ -38,9 +38,11 @@ export const profile = {
 
 export const menuItems = [
   { id: 1, title: "Home", triggerBy: "home" },
-  { id: 2, title: "About", triggerBy: "about" },
-  { id: 3, title: "Research", triggerBy: "research" },
+  // { id: 2, title: "Research", triggerBy: "research" },
+  { id: 3, title: "Academics", triggerBy: "academics" },
+  { id: 4, title: "Skills", triggerBy: "skills" },
   { id: 4, title: "Publications", triggerBy: "publications" },
+  { id: 5, title: "Experience", triggerBy: "experience" },
   { id: 5, title: "Contact", triggerBy: "contact" },
 ];
 

@@ -70,7 +70,7 @@ const ListStyled = styled.ul`
 const AcademicBackground = () => {
   return (
     <section
-      id="academicBackground"
+      id="academics"
       className="relative min-h-fit py-20 flex items-center justify-center border-b border-b-gray-300 lg:py-32"
     >
       <div className="max-w-xl w-full px-4 sm:px-0">

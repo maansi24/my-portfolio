@@ -1,4 +1,3 @@
-import About from "@sections/About";
 import Contact from "@sections/Contact";
 import Hero from "@sections/Hero";
 import Portfolio from "@sections/Portfolio";
@@ -8,6 +7,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import React from "react";
 import AcademicBackground from "@sections/AcademicBackground";
+import Experiences from "@sections/Experiences";
 
 const Index: NextPage = () => {
   return (
@@ -23,10 +23,11 @@ const Index: NextPage = () => {
 
       <main className="main-area">
         <Hero />
-        <About />
+        {/* <Research /> */}
         <AcademicBackground />
         <Skills />
         <Portfolio />
+        <Experiences />
         <Contact />
       </main>
     </>
