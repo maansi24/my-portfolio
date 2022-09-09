@@ -6,7 +6,7 @@ import { profile } from "@utils/data";
 import type { NextPage } from "next";
 import Head from "next/head";
 import React from "react";
-import AcademicBackground from "@sections/AcademicBackground";
+import AcademicBackground from "@sections/Academics";
 import Experiences from "@sections/Experiences";
 
 const Index: NextPage = () => {

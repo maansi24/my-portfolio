@@ -7,8 +7,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#4c4c4c",
+        textPrimary: "#4c4c4c",
         sideText: "#F3F4F6",
+        brownPrimary: "#c57653",
+        redSecondary: "#F5296E",
       },
       screens: settingsScreens,
       fontSize: settingsFontSizes,

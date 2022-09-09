@@ -8,8 +8,6 @@ export const lightTheme = {
   colors: {
     primary1: "#F5296E",
     primary2: "#c57653",
-    accent: "#FA6496",
-    secondary: "#FAC87D",
   },
   social: {
     facebook: "#4267B2",
@@ -28,8 +26,6 @@ export const darkTheme = {
   colors: {
     primary1: "#F5296E",
     primary2: "#c57653",
-    accent: "#FA6496",
-    secondary: "#FAC87D",
   },
   social: {
     facebook: "#4267B2",

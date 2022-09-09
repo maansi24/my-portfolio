@@ -1,4 +1,5 @@
 import { AboutInterface } from "@interfaces/AboutInterface";
+import { AcademicsInterface } from "@interfaces/AcademicsInterface";
 import { iconProps } from "@interfaces/IconProps";
 import React from "react";
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
@@ -68,4 +69,55 @@ export const AboutData: AboutInterface[] = [
   //   link: true,
   //   linkTo: profile.website,
   // },
+];
+
+export const academicsData: AcademicsInterface[] = [
+  {
+    id: 1,
+    row: {
+      dates: "2021-Present",
+      title: "Ph.D. in Chemistry",
+      cgpa: 8.79,
+      organization: "Indian Institute of Technology, Patna.",
+    },
+  },
+  {
+    id: 2,
+    row: {
+      dates: "2018-2020",
+      title: "M.Sc. in Chemistry",
+      cgpa: 9.74,
+      organization: "Thapar Institute of Engineering and Technology, Patiala.",
+    },
+  },
+  {
+    id: 3,
+    row: {
+      dates: "2015-2018",
+      title: "B.Sc. Non Medical",
+      percentage: 83.25,
+      organization:
+        "M.C.M DAV College for Women, Punjab University, Chandigarh.",
+    },
+  },
+  {
+    id: 4,
+    row: {
+      dates: "2014-2015",
+      title: "12th Class (CBSE)",
+      percentage: 92,
+      organization:
+        "Holy Heart Senior Secondary School, Nahan, Himachal Pradesh.",
+    },
+  },
+  {
+    id: 5,
+    row: {
+      dates: "2012-2013",
+      title: "10th Class (CBSE)",
+      cgpa: 9.8,
+      organization:
+        "Holy Heart Senior Secondary School, Nahan, Himachal Pradesh.",
+    },
+  },
 ];

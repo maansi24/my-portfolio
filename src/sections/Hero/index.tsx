@@ -36,23 +36,25 @@ const Hero = () => {
                 <a
                   href={about.linkTo}
                   target={!isMobile ? "_blank" : ""}
-                  className="text-primary hover:text-[#c57653]"
+                  className="text-textPrimary hover:text-[#c57653]"
                   rel="noreferrer"
                 >
                   {about.value}
                 </a>
               ) : (
-                <span className="text-primary">{about.value}</span>
+                <span className="text-textPrimary">{about.value}</span>
               )}
             </p>
           ))}
           <p className="col-span-1 sm:col-span-2">
             <span className="font-bold">Languages:</span>&nbsp;
-            <span className="text-primary">{profile.languages.join(", ")}</span>
+            <span className="text-textPrimary">
+              {profile.languages.join(", ")}
+            </span>
           </p>
           <p className="col-span-1 sm:col-span-2">
             <span className="font-bold">Address:</span>&nbsp;
-            <span className="text-primary">{profile.address}</span>
+            <span className="text-textPrimary">{profile.address}</span>
           </p>
         </div>
         <ul className="mt-8 flex items-center space-x-6">
