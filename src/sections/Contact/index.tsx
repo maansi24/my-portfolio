@@ -61,7 +61,7 @@ const Contact = () => {
         <div className="mt-10">
           <div
             id="form-container"
-            className="shadow-lg p-6 rounded-lg bg-gradient-to-r from-gray-100 to-gray-300"
+            className="shadow-lg p-6 rounded-lg bg-gradient-to-r from-brownPrimary/5 via-redSecondary/5 to-brownPrimary/5"
           >
             <form
               onSubmit={handleSubmit(onSubmitForm)}
@@ -73,7 +73,7 @@ const Contact = () => {
                 </label>
                 <input
                   type="text"
-                  className={`block w-full shadow py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md focus:outline-none focus:ring-2 ${
+                  className={`block w-full shadow py-3 px-4 placeholder-gray-400 border-gray-300 rounded-md focus:outline-none ${
                     errors.name ? "ring-2 ring-red-500/50" : null
                   }`}
                   placeholder="Name *"
@@ -108,7 +108,7 @@ const Contact = () => {
                       message: "Please enter a valid email address!",
                     },
                   })}
-                  className={`block w-full shadow py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md focus:outline-none focus:ring-2 ${
+                  className={`block w-full shadow py-3 px-4 placeholder-gray-400 border-gray-300 rounded-md focus:outline-none ${
                     errors.email ? "ring-2 ring-red-500/50" : null
                   }`}
                   placeholder="Email *"
@@ -126,13 +126,13 @@ const Contact = () => {
                 <label htmlFor="phone" className="sr-only">
                   Phone
                 </label>
-                <div className="mt-1 flex rounded-md shadow-sm">
-                  <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-50 px-3 text-gray-500 sm:text-sm ">
+                <div className="mt-1 flex rounded-md shadow">
+                  <span className="inline-flex items-center rounded-l-md border-r border-gray-200 bg-gray-50 px-3 text-gray-400 sm:text-sm ">
                     +91
                   </span>
                   <input
                     type="number"
-                    className={`block w-full rounded-none rounded-r-md py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border border-gray-300 focus:outline-none focus:ring-2 ${
+                    className={`block w-full rounded-none rounded-r-md py-3 px-4 placeholder-gray-400  border-gray-300 focus:outline-none ${
                       errors.phone ? "ring-2 ring-red-500/50" : null
                     }`}
                     placeholder="Phone (Optional)"
@@ -176,7 +176,7 @@ const Contact = () => {
                       message: "Subject should be a lesser than that!",
                     },
                   })}
-                  className={`block w-full shadow py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md focus:outline-none focus:ring-2 ${
+                  className={`block w-full shadow py-3 px-4 placeholder-gray-400 border-gray-300 rounded-md focus:outline-none ${
                     errors.subject ? "ring-2 ring-red-500/50" : null
                   }`}
                   placeholder="Subject *"
@@ -210,7 +210,7 @@ const Contact = () => {
                       message: "Your message must be longer than this!",
                     },
                   })}
-                  className={`block w-full shadow py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md focus:outline-none focus:ring-2 ${
+                  className={`block w-full shadow py-3 px-4 placeholder-gray-400 border-gray-300 rounded-md focus:outline-none ${
                     errors.message ? "ring-2 ring-red-500/50" : null
                   }`}
                   placeholder="Message *"
@@ -229,6 +229,7 @@ const Contact = () => {
                   size="sm"
                   rounded={false}
                   disabled={submitting}
+                  shine
                 >
                   Submit
                 </Button>
