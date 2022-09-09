@@ -34,7 +34,7 @@ const SectionTitle = ({
       <StyledTitle className="text-2xl font-bold leading-snug">
         {title}
       </StyledTitle>
-      <StyledDescription className="mt-4 text-sm text-gray-500">
+      <StyledDescription className="mt-4 text-sm text-textPrimary">
         {description}
       </StyledDescription>
     </div>

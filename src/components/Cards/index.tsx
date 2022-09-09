@@ -1,7 +1,8 @@
 import Button from "@components/Button";
+import { CardInterface } from "@interfaces/ComponentInterfaces/CardInterface";
 import classes from "classnames";
 import Image from "next/image";
-import React, { ReactNode } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const BaseCard = styled.div`
@@ -22,17 +23,9 @@ const Card = ({
   link = "",
   btnText = "Explore",
   center = false,
-}: {
-  title: string;
-  description: string;
-  icon?: ReactNode;
-  image?: string;
-  link?: string;
-  btnText?: string;
-  center?: boolean;
-}) => {
+}: CardInterface) => {
   return (
-    <BaseCard>
+    <BaseCard className="text-textPrimary">
       {image && (
         <div className="relative w-full aspect-[1]">
           <Image src={image} alt={title} layout="fill" objectFit="cover" />

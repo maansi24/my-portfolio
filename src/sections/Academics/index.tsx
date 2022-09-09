@@ -1,4 +1,5 @@
 import SectionTitle from "@components/SectionTitle";
+import { AcademicsInterface } from "@interfaces/AcademicsInterface";
 import { academicsData } from "@utils/data";
 import React from "react";
 import styled from "styled-components";
@@ -24,17 +25,17 @@ const AcademicBackground = () => {
       <div className="max-w-xl w-full px-4 sm:px-0">
         <SectionTitle name="Academic Background" />
         <div className="mt-4">
-          {academicsData.map((exp) => (
-            <ListStyled key={exp.id}>
-              <li className="dates font-bold text-xs">{exp.row.dates}</li>
+          {academicsData.map((academic: AcademicsInterface) => (
+            <ListStyled key={academic.id}>
+              <li className="dates font-bold text-xs">{academic.row.dates}</li>
               <li className="title font-bold text-sm">
-                {exp.row.title} |{" "}
-                {exp.row?.cgpa
-                  ? `CGPA: ${exp.row.cgpa}/10`
-                  : `Percentage: ${exp.row.percentage}%`}
+                {academic.row.title} |{" "}
+                {academic.row?.cgpa
+                  ? `CGPA: ${academic.row.cgpa}/10`
+                  : `Percentage: ${academic.row.percentage}%`}
               </li>
               <li className="desc text-sm text-textPrimary">
-                {exp.row.organization}
+                {academic.row.organization}
               </li>
             </ListStyled>
           ))}

@@ -1,6 +1,7 @@
 import { AboutInterface } from "@interfaces/AboutInterface";
 import { AcademicsInterface } from "@interfaces/AcademicsInterface";
 import { iconProps } from "@interfaces/IconProps";
+import { SkillsInterface } from "@interfaces/SkillsInterface";
 import React from "react";
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
@@ -119,5 +120,64 @@ export const academicsData: AcademicsInterface[] = [
       organization:
         "Holy Heart Senior Secondary School, Nahan, Himachal Pradesh.",
     },
+  },
+];
+
+export const skillsData: SkillsInterface[] = [
+  {
+    id: 1,
+    icon: null,
+    title: "FTIR",
+    description: "",
+    btnText: "",
+    btnLink: "",
+  },
+  {
+    id: 2,
+    icon: null,
+    title: "HPLC",
+    description: "",
+    btnText: "",
+    btnLink: "",
+  },
+  {
+    id: 3,
+    icon: null,
+    title: "AFM",
+    description: "",
+    btnText: "",
+    btnLink: "",
+  },
+  {
+    id: 4,
+    icon: null,
+    title: "UV",
+    description: "",
+    btnText: "",
+    btnLink: "",
+  },
+  {
+    id: 5,
+    icon: null,
+    title: "Circular Dichroism",
+    description: "",
+    btnText: "",
+    btnLink: "",
+  },
+  {
+    id: 6,
+    icon: null,
+    title: "Photo Luminescence",
+    description: "",
+    btnText: "",
+    btnLink: "",
+  },
+  {
+    id: 7,
+    icon: null,
+    title: "Gel Electrophorsis",
+    description: "",
+    btnText: "",
+    btnLink: "",
   },
 ];
