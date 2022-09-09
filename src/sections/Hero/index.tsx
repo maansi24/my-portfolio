@@ -12,7 +12,7 @@ const Hero = () => {
     >
       <div className="max-w-xl w-full px-4 sm:px-0">
         <h1 className="text-5xl font-bold">{profile.name}</h1>
-        <p className="text-sm">
+        <p className="text-sm text-primary">
           Hi! I am Maansi presently pursuing my Ph.D. at Department of
           Chemistry, Indian Institute of Technology Patna (IIT Patna).
           <br />
@@ -36,30 +36,28 @@ const Hero = () => {
                 <a
                   href={about.linkTo}
                   target={!isMobile ? "_blank" : ""}
-                  className="text-gray-500 hover:text-[#c57653]"
+                  className="text-primary hover:text-[#c57653]"
                   rel="noreferrer"
                 >
                   {about.value}
                 </a>
               ) : (
-                <span className="text-gray-500">{about.value}</span>
+                <span className="text-primary">{about.value}</span>
               )}
             </p>
           ))}
           <p className="col-span-1 sm:col-span-2">
             <span className="font-bold">Languages:</span>&nbsp;
-            <span className="text-gray-500">
-              {profile.languages.join(", ")}
-            </span>
+            <span className="text-primary">{profile.languages.join(", ")}</span>
           </p>
           <p className="col-span-1 sm:col-span-2">
             <span className="font-bold">Address:</span>&nbsp;
-            <span className="text-gray-500">{profile.address}</span>
+            <span className="text-primary">{profile.address}</span>
           </p>
         </div>
-        <ul className="mt-8 group flex items-center space-x-6">
+        <ul className="mt-8 flex items-center space-x-6">
           {profile.social.map((social) => (
-            <li key={social.id} className="icon">
+            <li key={social.id} className="icon hover:-mt-2">
               <a href={social.link} target="_blank" rel="noopener noreferrer">
                 {social.icon}
               </a>
@@ -71,7 +69,7 @@ const Hero = () => {
         className="absolute -rotate-90 -right-40 select-none -z-1 hidden lg:block"
         style={{ zIndex: -1 }}
       >
-        <h4 className="text-9xl font-extrabold text-gray-100 uppercase">
+        <h4 className="text-9xl font-extrabold text-sideText uppercase">
           {profile.name.split(" ")[0]}
         </h4>
       </div>

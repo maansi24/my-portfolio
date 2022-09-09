@@ -48,6 +48,3 @@ body {
 .icon {
   transition: all 0.3s ease-in-out;
 }
-.icon:hover {
-  margin-top: -10px;
-}
