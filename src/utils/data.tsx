@@ -24,13 +24,13 @@ export const profile = {
       icon: <FaFacebookF {...iconProps} style={{ color: "#4267B2" }} />,
     },
     {
-      id: 3,
+      id: 2,
       title: "linkedIn",
       link: "https://www.linkedin.com/in/maansi-aggarwal-03a1271b8/",
       icon: <FaLinkedinIn {...iconProps} style={{ color: "#0072b1" }} />,
     },
     {
-      id: 4,
+      id: 3,
       title: "instagram",
       link: "https://www.instagram.com/maansingla/",
       icon: <FaInstagram {...iconProps} style={{ color: "#bc2a8d" }} />,
@@ -43,9 +43,9 @@ export const menuItems = [
   // { id: 2, title: "Research", triggerBy: "research" },
   { id: 3, title: "Academics", triggerBy: "academics" },
   { id: 4, title: "Skills", triggerBy: "skills" },
-  { id: 4, title: "Publications", triggerBy: "publications" },
-  { id: 5, title: "Experience", triggerBy: "experience" },
-  { id: 5, title: "Contact", triggerBy: "contact" },
+  { id: 5, title: "Publications", triggerBy: "publications" },
+  { id: 6, title: "Experience", triggerBy: "experience" },
+  { id: 7, title: "Contact", triggerBy: "contact" },
 ];
 
 export const AboutData: AboutInterface[] = [
@@ -63,13 +63,6 @@ export const AboutData: AboutInterface[] = [
     link: true,
     linkTo: `mailTo: ${profile.email}`,
   },
-  // { key: "Address", value: profile.address },
-  // {
-  //   key: "Website",
-  //   value: profile.website,
-  //   link: true,
-  //   linkTo: profile.website,
-  // },
 ];
 
 export const academicsData: AcademicsInterface[] = [
