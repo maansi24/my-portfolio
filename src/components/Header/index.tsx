@@ -1,5 +1,5 @@
 import Button from "@components/Button";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import styled from "styled-components";
 import React from "react";
 import Link from "next/link";
@@ -8,6 +8,7 @@ import Hamburger from "hamburger-react";
 import SVG from "react-inlinesvg";
 import { scrollSmoothTo } from "@utils/lib";
 import { menuItems } from "@utils/data";
+import { Dialog, Transition } from "@headlessui/react";
 
 const StyledHeader = styled.header<{ shrink: boolean }>`
   width: 100%;
@@ -53,12 +54,16 @@ const SVGStyled = styled(SVG)<any>`
 const Header = () => {
   const { isMobile, shrink, setView } = useStateContext();
 
-  const [isOpen, setOpen] = useState<boolean>(false);
+  const [openMobileMenu, setOpenMobileMenu] = useState<boolean>(false);
 
   const downloadCV = () => {
     if (window && typeof window !== undefined) {
       window.open("/files/Maansi CV.pdf", "_blank");
     }
+  };
+
+  const toggleMobileMenu = () => {
+    setOpenMobileMenu((prevState) => !prevState);
   };
 
   return (
@@ -73,7 +78,7 @@ const Header = () => {
                   title="Logo"
                   width={70}
                   height={70}
-                  shrink={shrink}
+                  shrink={shrink ? true : false}
                 />
               </a>
             </Link>
@@ -83,17 +88,17 @@ const Header = () => {
               <ul className="flex items-center space-x-6">
                 {menuItems.map(
                   (item: { id: number; title: string; triggerBy: string }) => (
-                    <a
-                      key={item.id}
-                      onClick={() => {
-                        scrollSmoothTo(item.triggerBy);
-                        setView(item.triggerBy);
-                      }}
-                    >
-                      <MenuItemContainer shrink={shrink}>
-                        <MenuItem shrink={shrink}>{item.title}</MenuItem>
-                      </MenuItemContainer>
-                    </a>
+                    <MenuItemContainer key={item.id} shrink={shrink}>
+                      <MenuItem
+                        shrink={shrink}
+                        onClick={() => {
+                          scrollSmoothTo(item.triggerBy);
+                          setView(item.triggerBy);
+                        }}
+                      >
+                        {item.title}
+                      </MenuItem>
+                    </MenuItemContainer>
                   )
                 )}
                 <Button size="sm" sx="shine" onClick={downloadCV}>
@@ -101,15 +106,70 @@ const Header = () => {
                 </Button>
               </ul>
             ) : (
-              <Hamburger
-                toggled={isOpen}
-                toggle={setOpen}
-                size={30}
-                duration={0.3}
-                distance="sm"
-                color={shrink ? "white" : "black"}
-                rounded
-              />
+              <>
+                <Hamburger
+                  toggled={openMobileMenu}
+                  toggle={toggleMobileMenu}
+                  size={30}
+                  duration={0.3}
+                  distance="sm"
+                  color={shrink ? "white" : "black"}
+                  rounded
+                />
+                <Transition.Root show={openMobileMenu} as={Fragment}>
+                  <Dialog
+                    as="div"
+                    className="relative z-10 w-full"
+                    onClose={() => {}}
+                  >
+                    <Transition.Child
+                      as={Fragment}
+                      enter="ease-in-out duration-500"
+                      enterFrom="opacity-0"
+                      enterTo="opacity-100"
+                      leave="ease-in-out duration-500"
+                      leaveFrom="opacity-100"
+                      leaveTo="opacity-0"
+                    >
+                      <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+                    </Transition.Child>
+
+                    <div className="fixed inset-0 overflow-hidden">
+                      <div className="absolute inset-0 overflow-hidden">
+                        <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full">
+                          <Transition.Child
+                            as={Fragment}
+                            enter="transform transition ease-in-out duration-500 sm:duration-700"
+                            enterFrom="translate-x-full"
+                            enterTo="translate-x-0"
+                            leave="transform transition ease-in-out duration-500 sm:duration-700"
+                            leaveFrom="translate-x-0"
+                            leaveTo="translate-x-full"
+                          >
+                            <Dialog.Panel className="pointer-events-auto w-screen max-w-md">
+                              <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
+                                <div className="px-4 sm:px-6">
+                                  <div className="h-10" />
+                                </div>
+                                <div className="relative mt-6 flex-1 px-4 sm:px-6">
+                                  {/* Replace with your content */}
+                                  <div className="absolute inset-0 px-4 sm:px-6">
+                                    <div
+                                      className="h-full border-2 border-dashed border-gray-200"
+                                      aria-hidden="true"
+                                    />
+                                  </div>
+                                  {/* /End replace */}
+                                </div>
+                              </div>
+                            </Dialog.Panel>
+                          </Transition.Child>
+                        </div>
+                      </div>
+                    </div>
+                  </Dialog>
+                </Transition.Root>
+              </>
             )}
           </div>
         </div>

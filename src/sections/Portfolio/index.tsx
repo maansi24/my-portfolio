@@ -23,7 +23,7 @@ const portfolioData = [
     ctaText: "Read More",
   },
   {
-    id: 2,
+    id: 3,
     title:
       "Two-dimensional ultrathin metal-based nanosheets for photocatalytic CO2 conversion to solar fuels",
     desc: "The role of metal-based layers for CO2 conversion and new strategies such as surface modifications, defect generation and heterojunctions to optimize their functionalities",

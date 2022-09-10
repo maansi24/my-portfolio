@@ -21,7 +21,7 @@ const Index: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="main-area">
+      <div className="main-area">
         <Hero />
         {/* <Research /> */}
         <AcademicBackground />
@@ -29,7 +29,7 @@ const Index: NextPage = () => {
         <Portfolio />
         <Experiences />
         <Contact />
-      </main>
+      </div>
     </>
   );
 };

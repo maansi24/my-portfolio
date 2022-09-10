@@ -9,7 +9,7 @@ import { FaArrowUp } from "react-icons/fa";
 import { useStateContext } from "@contexts/ContextProvider";
 import { scrollSmoothTo } from "@utils/lib";
 
-const AsideProfilePic = styled.img<any>`
+const AsideProfilePic = styled.div<any>`
   width: ${({ width }) => width}px;
   height: 100%;
   background: url("/images/profile_pic.jpg");
