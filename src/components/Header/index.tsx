@@ -9,6 +9,7 @@ import SVG from "react-inlinesvg";
 import { scrollSmoothTo } from "@utils/lib";
 import { menuItems } from "@utils/data";
 import { Dialog, Transition } from "@headlessui/react";
+import classNames from "classnames";
 
 const StyledHeader = styled.header<{ shrink: boolean }>`
   width: 100%;
@@ -68,8 +69,8 @@ const Header = () => {
 
   return (
     <StyledHeader shrink={shrink}>
-      <div className="text-white h-full max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="h-full flex justify-between items-center">
+      <div className="h-full px-4 mx-auto text-white max-w-7xl sm:px-6">
+        <div className="flex items-center justify-between h-full">
           <div className="logo-container">
             <Link href="/">
               <a>
@@ -119,7 +120,7 @@ const Header = () => {
                 <Transition.Root show={openMobileMenu} as={Fragment}>
                   <Dialog
                     as="div"
-                    className="relative z-10 w-full"
+                    className="relative z-30 w-full"
                     onClose={() => {}}
                   >
                     <Transition.Child
@@ -131,12 +132,12 @@ const Header = () => {
                       leaveFrom="opacity-100"
                       leaveTo="opacity-0"
                     >
-                      <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+                      <div className="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75" />
                     </Transition.Child>
 
                     <div className="fixed inset-0 overflow-hidden">
                       <div className="absolute inset-0 overflow-hidden">
-                        <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full">
+                        <div className="fixed inset-y-0 right-0 flex max-w-full pointer-events-none">
                           <Transition.Child
                             as={Fragment}
                             enter="transform transition ease-in-out duration-500 sm:duration-700"
@@ -146,20 +147,53 @@ const Header = () => {
                             leaveFrom="translate-x-0"
                             leaveTo="translate-x-full"
                           >
-                            <Dialog.Panel className="pointer-events-auto w-screen max-w-md">
-                              <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
+                            <Dialog.Panel className="w-screen max-w-md pointer-events-auto">
+                              <div
+                                className={classNames(
+                                  `flex flex-col h-full py-6 overflow-y-scroll shadow-xl`,
+                                  shrink ? "bg-black" : "bg-white"
+                                )}
+                              >
                                 <div className="px-4 sm:px-6">
                                   <div className="h-10" />
                                 </div>
-                                <div className="relative mt-6 flex-1 px-4 sm:px-6">
-                                  {/* Replace with your content */}
-                                  <div className="absolute inset-0 px-4 sm:px-6">
-                                    <div
-                                      className="h-full border-2 border-dashed border-gray-200"
-                                      aria-hidden="true"
-                                    />
+                                <div className="relative flex-1 px-4 mt-6 sm:px-6">
+                                  <ul className="flex flex-col space-y-4">
+                                    {menuItems.map(
+                                      (item: {
+                                        id: number;
+                                        title: string;
+                                        triggerBy: string;
+                                      }) => (
+                                        <MenuItemContainer
+                                          key={item.id}
+                                          shrink={shrink}
+                                        >
+                                          <MenuItem
+                                            shrink={shrink}
+                                            isMobile={isMobile}
+                                            onClick={() => {
+                                              toggleMobileMenu();
+                                              scrollSmoothTo(item.triggerBy);
+                                              setView(item.triggerBy);
+                                            }}
+                                            className="text-2xl sm:text-base"
+                                          >
+                                            {item.title}
+                                          </MenuItem>
+                                        </MenuItemContainer>
+                                      )
+                                    )}
+                                  </ul>
+                                  <div className="h-[1px] border my-4 max-w-[250px] mx-auto" />
+                                  <div className="w-full text-center">
+                                    <Button
+                                      sx="shine mt-2"
+                                      onClick={downloadCV}
+                                    >
+                                      Download CV
+                                    </Button>
                                   </div>
-                                  {/* /End replace */}
                                 </div>
                               </div>
                             </Dialog.Panel>
