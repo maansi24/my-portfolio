@@ -29,7 +29,7 @@ const shineAnimation = keyframes`
 const ButtonStyled = styled.button<Partial<ButtonInterface>>`
   position: relative;
   box-sizing: border-box;
-  display: inline-block;
+  /* display: inline-block; */
   text-align: center;
   border: 1px solid;
   font-size: 16px;

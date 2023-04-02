@@ -21,19 +21,22 @@ export const profile = {
       id: 1,
       title: "facebook",
       link: "https://www.facebook.com/mansi.singla.391",
-      icon: <FaFacebookF {...iconProps} style={{ color: "#4267B2" }} />,
+      icon: <FaFacebookF {...iconProps} className="text-white" />,
+      color: "#4267B2",
     },
     {
       id: 2,
       title: "linkedIn",
       link: "https://www.linkedin.com/in/maansi-aggarwal-03a1271b8/",
-      icon: <FaLinkedinIn {...iconProps} style={{ color: "#0072b1" }} />,
+      icon: <FaLinkedinIn {...iconProps} className="text-white" />,
+      color: "#0072b1",
     },
     {
       id: 3,
       title: "instagram",
       link: "https://www.instagram.com/maansingla/",
-      icon: <FaInstagram {...iconProps} style={{ color: "#bc2a8d" }} />,
+      icon: <FaInstagram {...iconProps} className="text-white" />,
+      color: "#bc2a8d",
     },
   ],
 };
@@ -49,14 +52,14 @@ export const menuItems = [
 ];
 
 export const AboutData: AboutInterface[] = [
-  { key: "Age", value: profile.age },
+  // { key: "Age", value: profile.age },
   {
     key: "Phone",
     value: profile.phone,
     link: true,
     linkTo: `tel: ${profile.phone}`,
   },
-  { key: "Residence", value: profile.country },
+  // { key: "Residence", value: profile.country },
   {
     key: "Email",
     value: profile.email,

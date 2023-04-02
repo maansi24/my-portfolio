@@ -21,17 +21,48 @@ const researchExp = [
 ];
 const teachingExp = [
   {
-    title: "Teaching Experience",
-    description: "Tutored the students in the Canada market for 6 months",
-    institute: "",
-    dates: "",
+    title: "Tutor",
+    description: [
+      {
+        content:
+          "Physical Chemistry and Introduction to Organic Chemistry to Canadian students",
+        institute: "",
+        dates: "",
+      },
+    ],
   },
   {
     title: "Teaching Assistant",
-    description:
-      "For the course CH103 (Introductory Chemistry) for 2 semester at IIT, Patna",
-    institute: "",
-    dates: "",
+    description: [
+      {
+        content:
+          "For the course CH103 (Introductory Chemistry) for 2 semesters at IIT, Patna",
+        institute: "",
+        dates: "",
+      },
+      {
+        content: "For the course CH440 (Inorganic Practical) at IIT, Patna",
+        institute: "",
+        dates: "",
+      },
+    ],
+  },
+  {
+    title: "Guest Faculty",
+    description: [
+      {
+        content:
+          "For the course PC-100103 (Atomic and Molecular Structure) at NSIT, Patna",
+        institute: "",
+        dates: "",
+      },
+      {
+        content:
+          "For the course PC-100203 (Periodic Properties and Stereochemistry) at NSIT, Patna",
+        institute: "",
+        dates: "",
+      },
+    ],
   },
 ];
 const otherExp = [
@@ -87,7 +118,7 @@ const Experiences = () => {
                           key={research.title}
                           className="mt-2 border p-4 rounded-md shadow-md"
                         >
-                          <span className="text-xs text-gray-400">
+                          <span className="text-xs text-gray-400 italic">
                             {research.dates}
                           </span>
                           <h4 className="font-bold text-[#c57653]">
@@ -131,13 +162,19 @@ const Experiences = () => {
                           key={research.title}
                           className="mt-2 border p-4 rounded-md shadow-md"
                         >
-                          <span className="text-xs text-gray-400">
+                          {/* <span className="text-xs text-gray-400">
                             {research.dates}
-                          </span>
+                          </span> */}
                           <h4 className="font-bold text-[#c57653]">
                             {research.title}
                           </h4>
-                          <p>{research.description}</p>
+                          <ul>
+                            {research.description.map((description, index) => (
+                              <li key={index} className="list-disc ml-5">
+                                {description.content}
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                       ))}
                     </Disclosure.Panel>
@@ -149,7 +186,9 @@ const Experiences = () => {
               {({ open }) => (
                 <>
                   <Disclosure.Button className="flex w-full items-center justify-between rounded-lg bg-[#c57653]/20 px-4 py-2 text-left text-base font-medium text-[#c57653] hover:bg-[#c57653]/25 focus:outline-none focus-visible:ring focus-visible:ring-opacity-75">
-                    <span>Other Experience</span>
+                    <span className={`${open ? "font-bold" : ""}`}>
+                      Other Experience
+                    </span>
                     <FaChevronDown
                       className={`${
                         open ? "rotate-180 transform" : ""

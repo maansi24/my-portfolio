@@ -57,9 +57,16 @@ const Hero = () => {
             <span className="text-textPrimary">{profile.address}</span>
           </p>
         </div>
-        <ul className="mt-8 flex items-center space-x-6">
+        <ul className="mt-8 flex items-center space-x-4">
           {profile.social.map((social) => (
-            <li key={social.id} className="icon hover:-mt-2">
+            <li
+              key={social.id}
+              className="icon border-2 rounded-full p-2 cursor-pointer transition__300 opacity-75 hover:opacity-100"
+              style={{
+                backgroundColor: social.color,
+                borderColor: social.color,
+              }}
+            >
               <a href={social.link} target="_blank" rel="noopener noreferrer">
                 {social.icon}
               </a>

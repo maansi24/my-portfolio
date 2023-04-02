@@ -10,6 +10,7 @@ import { scrollSmoothTo } from "@utils/lib";
 import { menuItems } from "@utils/data";
 import { Dialog, Transition } from "@headlessui/react";
 import classNames from "classnames";
+import { FiDownload } from "react-icons/fi";
 
 const StyledHeader = styled.header<{ shrink: boolean }>`
   width: 100%;
@@ -102,8 +103,13 @@ const Header = () => {
                     </MenuItemContainer>
                   )
                 )}
-                <Button size="sm" sx="shine" onClick={downloadCV}>
-                  Download CV
+                <Button
+                  size="sm"
+                  sx="shine flex items-center space-x-2 mx-auto"
+                  onClick={downloadCV}
+                >
+                  <span>Download CV</span>
+                  <FiDownload fontSize={20} />
                 </Button>
               </ul>
             ) : (
@@ -188,10 +194,11 @@ const Header = () => {
                                   <div className="h-[1px] border my-4 max-w-[250px] mx-auto" />
                                   <div className="w-full text-center">
                                     <Button
-                                      sx="shine mt-2"
+                                      sx="shine mt-2 flex items-center space-x-2 mx-auto"
                                       onClick={downloadCV}
                                     >
-                                      Download CV
+                                      <span>Download CV</span>
+                                      <FiDownload fontSize={20} />
                                     </Button>
                                   </div>
                                 </div>
