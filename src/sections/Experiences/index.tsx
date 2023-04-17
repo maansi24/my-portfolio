@@ -25,7 +25,7 @@ const teachingExp = [
     description: [
       {
         content:
-          "Physical Chemistry and Introduction to Organic Chemistry to Canadian students",
+          "For the course CHEM130 (Physical Chemistry and Introduction of Organic Chemistry) to Canadian students",
         institute: "",
         dates: "",
       },
@@ -84,12 +84,12 @@ const Experiences = () => {
   return (
     <section
       id="experience"
-      className="relative min-h-fit py-20 flex items-center justify-center border-b border-b-gray-300 lg:py-32"
+      className="relative flex items-center justify-center py-20 border-b min-h-fit border-b-gray-300 lg:py-32"
     >
-      <div className="max-w-xl w-full px-4 sm:px-0">
+      <div className="w-full max-w-xl px-4 sm:px-0">
         <SectionTitle name="Experience" />
         <div className="w-full pt-8">
-          <div className="mx-auto w-full rounded-2xl bg-white">
+          <div className="w-full mx-auto bg-white rounded-2xl">
             <Disclosure as="div" defaultOpen>
               {({ open }) => (
                 <>
@@ -116,9 +116,9 @@ const Experiences = () => {
                       {researchExp.map((research) => (
                         <div
                           key={research.title}
-                          className="mt-2 border p-4 rounded-md shadow-md"
+                          className="p-4 mt-2 border rounded-md shadow-md"
                         >
-                          <span className="text-xs text-gray-400 italic">
+                          <span className="text-xs italic text-gray-400">
                             {research.dates}
                           </span>
                           <h4 className="font-bold text-[#c57653]">
@@ -160,7 +160,7 @@ const Experiences = () => {
                       {teachingExp.map((research) => (
                         <div
                           key={research.title}
-                          className="mt-2 border p-4 rounded-md shadow-md"
+                          className="p-4 mt-2 border rounded-md shadow-md"
                         >
                           {/* <span className="text-xs text-gray-400">
                             {research.dates}
@@ -170,7 +170,7 @@ const Experiences = () => {
                           </h4>
                           <ul>
                             {research.description.map((description, index) => (
-                              <li key={index} className="list-disc ml-5">
+                              <li key={index} className="ml-5 list-disc">
                                 {description.content}
                               </li>
                             ))}
@@ -208,7 +208,7 @@ const Experiences = () => {
                       {otherExp.map((research) => (
                         <div
                           key={research.title}
-                          className="mt-2 border p-4 rounded-md shadow-md"
+                          className="p-4 mt-2 border rounded-md shadow-md"
                         >
                           <span className="text-xs text-gray-400">
                             {research.dates}
@@ -231,7 +231,7 @@ const Experiences = () => {
         className="absolute -rotate-90 -right-[300px] select-none hidden lg:inline-block"
         style={{ zIndex: -1 }}
       >
-        <span className="text-8xl font-extrabold text-gray-100 uppercase inline-block">
+        <span className="inline-block font-extrabold text-gray-100 uppercase text-8xl">
           Experiences
         </span>
       </div> */}
