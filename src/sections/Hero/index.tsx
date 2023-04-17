@@ -8,10 +8,15 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-fit py-20 flex items-center justify-center border-b border-b-gray-300 lg:min-h-screen lg:py-0"
+      className="relative flex items-center justify-center py-20 border-b min-h-fit border-b-gray-300 lg:min-h-screen lg:py-0"
     >
-      <div className="max-w-xl w-full px-4 sm:px-0">
-        <h1 className="text-5xl font-bold">{profile.name}</h1>
+      <div className="w-full max-w-xl px-4 sm:px-0">
+        <div className="relative">
+          <h1 className="mb-6 text-5xl font-bold md:mb-4">{profile.name}</h1>
+          <p className="absolute text-sm font-bold -bottom-3 md:-bottom-1">
+            (PMRF Fellow, 2022)
+          </p>
+        </div>
         <p className="text-sm text-primary">
           Hi! I am Maansi presently pursuing my Ph.D. at Department of
           Chemistry, Indian Institute of Technology Patna (IIT Patna).
@@ -25,10 +30,9 @@ const Hero = () => {
           >
             Prof. Prolay das
           </a>{" "}
-          on application of Carbon dot conjugation with DNA and other
-          biomolecules.
+          on application of Carbon dot conjugation with biomolecules.
         </p>
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
+        <div className="grid grid-cols-1 mt-6 sm:grid-cols-2 gap-x-8 gap-y-2">
           {AboutData.map((about: AboutInterface) => (
             <p key={about.key}>
               <span className="font-bold">{about.key}:</span>&nbsp;
@@ -57,11 +61,11 @@ const Hero = () => {
             <span className="text-textPrimary">{profile.address}</span>
           </p>
         </div>
-        <ul className="mt-8 flex items-center space-x-4">
+        <ul className="flex items-center mt-8 space-x-4">
           {profile.social.map((social) => (
             <li
               key={social.id}
-              className="icon border-2 rounded-full p-2 cursor-pointer transition__300 opacity-75 hover:opacity-100"
+              className="p-2 border-2 rounded-full opacity-75 cursor-pointer icon transition__300 hover:opacity-100"
               style={{
                 backgroundColor: social.color,
                 borderColor: social.color,
@@ -75,10 +79,10 @@ const Hero = () => {
         </ul>
       </div>
       <div
-        className="absolute -rotate-90 -right-40 select-none -z-1 hidden lg:block"
+        className="absolute hidden -rotate-90 select-none -right-40 -z-1 lg:block"
         style={{ zIndex: -1 }}
       >
-        <h4 className="text-9xl font-extrabold text-sideText uppercase">
+        <h4 className="font-extrabold uppercase text-9xl text-sideText">
           {profile.name.split(" ")[0]}
         </h4>
       </div>

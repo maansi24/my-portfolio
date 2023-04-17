@@ -4,7 +4,6 @@ import styled from "styled-components";
 import Header from "../Header";
 import React from "react";
 import { useWindowSize } from "react-use";
-import Footer from "@components/Footer";
 import { FaArrowUp } from "react-icons/fa";
 import { useStateContext } from "@contexts/ContextProvider";
 import { scrollSmoothTo } from "@utils/lib";
@@ -66,7 +65,7 @@ const Layout = ({
       <AsideProfilePic width={asideWidth} />
       <StyledMain width={asideWidth}>
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </StyledMain>
       {shrink && (
         <FaArrowUp
