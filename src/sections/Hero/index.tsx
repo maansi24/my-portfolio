@@ -28,7 +28,7 @@ const Hero = () => {
             className="text-[#c57653]"
             rel="noreferrer"
           >
-            Prof. Prolay das
+            Prof. Prolay Das
           </a>{" "}
           on application of Carbon dot conjugation with biomolecules.
         </p>
