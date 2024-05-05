@@ -20,21 +20,23 @@ const AcademicBackground = () => {
   return (
     <section
       id="academics"
-      className="relative min-h-fit py-20 flex items-center justify-center border-b border-b-gray-300 lg:py-32"
+      className="relative flex items-center justify-center py-20 border-b min-h-fit border-b-gray-300 lg:py-32"
     >
-      <div className="max-w-xl w-full px-4 sm:px-0">
+      <div className="w-full max-w-xl px-4 sm:px-0">
         <SectionTitle name="Academic Background" />
         <div className="mt-4">
           {academicsData.map((academic: AcademicsInterface) => (
             <ListStyled key={academic.id}>
-              <li className="dates font-bold text-xs">{academic.row.dates}</li>
-              <li className="title font-bold text-sm">
+              <li className="text-xs font-semibold opacity-50">
+                {academic.row.dates}
+              </li>
+              <li className="text-sm font-bold title">
                 {academic.row.title} |{" "}
                 {academic.row?.cgpa
                   ? `CGPA: ${academic.row.cgpa}/10`
                   : `Percentage: ${academic.row.percentage}%`}
               </li>
-              <li className="desc text-sm text-textPrimary">
+              <li className="text-sm desc text-textPrimary">
                 {academic.row.organization}
               </li>
             </ListStyled>
@@ -45,7 +47,7 @@ const AcademicBackground = () => {
         className="absolute -rotate-90 -right-[240px] select-none hidden lg:inline-block"
         style={{ zIndex: -1 }}
       >
-        <span className="text-8xl font-extrabold text-sideText uppercase inline-block">
+        <span className="inline-block font-extrabold uppercase text-8xl text-sideText">
           ACADEMICS
         </span>
       </div>

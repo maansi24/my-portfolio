@@ -51,14 +51,24 @@ const teachingExp = [
     title: "Guest Faculty",
     description: [
       {
-        content:
-          "For the course PC-100103 (Atomic and Molecular Structure) at NSIT, Patna",
+        content: "PC-100203: Spectroscopic Techniques, NSIT, Patna",
         institute: "",
         dates: "",
       },
       {
         content:
-          "For the course PC-100203 (Periodic Properties and Stereochemistry) at NSIT, Patna",
+          "PC-100203: Thermodynamic Functions and Water Chemistry, NSIT, Patna",
+        institute: "",
+        dates: "",
+      },
+      {
+        content: "PC-100103: Atomic and Molecular Structure, NSIT, Patna",
+        institute: "",
+        dates: "",
+      },
+      {
+        content:
+          "PC-100203: Periodic Properties and Stereochemistry, NSIT, Patna",
         institute: "",
         dates: "",
       },

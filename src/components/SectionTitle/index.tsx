@@ -16,9 +16,6 @@ const StyledName = styled.span`
   }
 `;
 
-const StyledTitle = styled.h2``;
-const StyledDescription = styled.p``;
-
 const SectionTitle = ({
   name = "",
   title = "",
@@ -29,14 +26,10 @@ const SectionTitle = ({
   description?: string;
 }) => {
   return (
-    <div>
-      <StyledName className="text-sm uppercase font-bold">{name}</StyledName>
-      <StyledTitle className="text-2xl font-bold leading-snug">
-        {title}
-      </StyledTitle>
-      <StyledDescription className="mt-4 text-sm text-textPrimary">
-        {description}
-      </StyledDescription>
+    <div className="pb-4 border-b">
+      <StyledName className="text-sm font-bold uppercase">{name}</StyledName>
+      <h2 className="text-2xl font-bold leading-snug">{title}</h2>
+      <p className="text-sm opacity-75 text-textPrimary">{description}</p>
     </div>
   );
 };

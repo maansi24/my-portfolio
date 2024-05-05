@@ -6,7 +6,7 @@ interface ButtonInterface {
   children: ReactNode;
   variant?: "primary" | "ghost";
   disabled?: boolean;
-  size?: "sm" | "md" | "lg";
+  size?: "xs" | "sm" | "md" | "lg";
   sx?: string;
   rounded?: boolean;
   noPadding?: boolean;
@@ -32,7 +32,14 @@ const ButtonStyled = styled.button<Partial<ButtonInterface>>`
   /* display: inline-block; */
   text-align: center;
   border: 1px solid;
-  font-size: 16px;
+  font-size: ${({ size }) => {
+    switch (size) {
+      case "xs":
+        return "12px";
+      default:
+        return "16px";
+    }
+  }};
   font-weight: ${({ size }) => (size === "sm" ? "normal" : "bold")};
   text-decoration: none;
   transition: all 0.3s ease-in-out;
@@ -62,6 +69,8 @@ const ButtonStyled = styled.button<Partial<ButtonInterface>>`
   padding: ${({ size, noPadding }) => {
     if (noPadding) return "0 0";
     switch (size) {
+      case "xs":
+        return "0.125rem 0.725rem";
       case "sm":
         return "0.25rem 1rem";
       case "md":

@@ -1,3 +1,4 @@
+import Badge from "@components/Badge";
 import { useStateContext } from "@contexts/ContextProvider";
 import { AboutInterface } from "@interfaces/AboutInterface";
 import { AboutData, profile } from "@utils/data";
@@ -12,10 +13,11 @@ const Hero = () => {
     >
       <div className="w-full max-w-xl px-4 sm:px-0">
         <div className="relative">
+          <Badge text="PMRF Fellow, 2022" />
           <h1 className="mb-6 text-5xl font-bold md:mb-4">{profile.name}</h1>
-          <p className="absolute text-sm font-bold -bottom-3 md:-bottom-1">
+          {/* <p className="absolute text-sm font-bold -bottom-3 md:-bottom-1">
             (PMRF Fellow, 2022)
-          </p>
+          </p> */}
         </div>
         <p className="text-sm text-primary">
           Hi! I am Maansi presently pursuing my Ph.D. at Department of

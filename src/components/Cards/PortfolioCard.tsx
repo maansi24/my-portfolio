@@ -20,7 +20,7 @@ const PortfolioCardStyled = styled.div<any>`
   filter: grayscale(0);
   transition: all 0.3s ease-in-out;
 
-  & h2 {
+  /* & h2 {
     font-size: 20px;
     opacity: 0;
     color: white;
@@ -30,7 +30,7 @@ const PortfolioCardStyled = styled.div<any>`
     opacity: 0;
     color: white;
     transition: opacity 0.3s ease-in-out;
-  }
+  } */
   & .button-container {
     position: absolute;
     bottom: 1rem;
@@ -49,17 +49,13 @@ const PortfolioCardStyled = styled.div<any>`
     width: 100%;
     height: 100%;
     background: black;
-    opacity: 0;
+    opacity: 0.05;
     pointer-events: none;
     transition: all 0.3s ease-in-out;
   }
   &:hover {
     box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
       0 8px 10px -6px rgb(0 0 0 / 0.1);
-    &::after {
-      opacity: 0.5;
-      pointer-events: none;
-    }
     & .innerContainer {
       &:before {
         opacity: 0.2;
@@ -79,45 +75,26 @@ const PortfolioCardStyled = styled.div<any>`
 `;
 
 const PortfolioCard = ({ data }: { data: any }) => {
-  const { title, desc, image, link, ctaText } = data;
+  const { title, desc, image, link, publicationDate } = data;
+
   return (
-    <>
-      {link ? (
-        <PortfolioCardStyled
-          bg={image}
-          className="shadow-sm hover:shadow-lg transition__300"
-        >
-          {/* <div className="innerContainer">
-            <h2 className="text-lg line-clamp-2">{title}</h2>
-            <p className="line-clamp-5">{desc}</p>
-          </div> */}
-          <div className="button-container">
-            <Link href={link}>
-              <a target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  sx="flex items-center space-x-2"
-                  noPadding
-                >
-                  <span>{ctaText}</span> <FiExternalLink />
-                </Button>
-              </a>
-            </Link>
-          </div>
-        </PortfolioCardStyled>
-      ) : (
-        <PortfolioCardStyled
-          bg={image}
-          className="shadow-sm hover:shadow-lg transition__300"
-        >
-          <div className="innerContainer">
-            <h2 className="text-lg line-clamp-2">{title}</h2>
-            <p className="line-clamp-5">{desc}</p>
-          </div>
-        </PortfolioCardStyled>
-      )}
-    </>
+    <div className="space-y-3">
+      <PortfolioCardStyled bg={image} className="shadow-sm hover:shadow-lg" />
+      <div className="flex flex-col items-start px-1">
+        <p className="text-xs font-semibold opacity-50">{publicationDate}</p>
+        <div className="flex-1">
+          <p className="font-semibold line-clamp-2 text-textPrimary">{title}</p>
+          <p className="text-xs opacity-50 line-clamp-3">{desc}</p>
+        </div>
+        <Link href={link}>
+          <a target="_blank" className="mt-2" rel="noopener noreferrer">
+            <Button sx="flex items-center space-x-1" size="xs">
+              <span>Read More</span> <FiExternalLink className="inline" />
+            </Button>
+          </a>
+        </Link>
+      </div>
+    </div>
   );
 };
 
