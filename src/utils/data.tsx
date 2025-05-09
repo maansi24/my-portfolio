@@ -176,4 +176,12 @@ export const skillsData: SkillsInterface[] = [
     btnText: "",
     btnLink: "",
   },
+  {
+    id: 8,
+    icon: null,
+    title: "Rehology",
+    description: "",
+    btnText: "",
+    btnLink: "",
+  },
 ];
