@@ -44,10 +44,12 @@ export const profile = {
 export const menuItems = [
   { id: 1, title: "Home", triggerBy: "home" },
   // { id: 2, title: "Research", triggerBy: "research" },
-  { id: 3, title: "Academics", triggerBy: "academics" },
+  // { id: 3, title: "Academics", triggerBy: "academics" },
   { id: 4, title: "Skills", triggerBy: "skills" },
   { id: 5, title: "Publications", triggerBy: "publications" },
+  // { id: 5, title: "Conference", triggerBy: "conference" },
   { id: 6, title: "Experience", triggerBy: "experience" },
+  // { id: 6, title: "Awards & Honors", triggerBy: "awards" },
   { id: 7, title: "Contact", triggerBy: "contact" },
 ];
 

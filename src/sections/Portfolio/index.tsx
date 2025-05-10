@@ -7,6 +7,24 @@ import { HiChevronUpDown } from "react-icons/hi2";
 
 const portfolioData = [
   {
+    title: "Bromine-doped carbon dot",
+    desc: "Concentration-dependent multicolor emission is an unusual yet appealing photoluminescence property of various carbonaceous nanomaterials with interesting potential applications.",
+    image:
+      "https://res.cloudinary.com/manavkaushal/image/upload/v1746817780/Screenshot_2025-05-10_003921_nc0vga.png",
+    link: "https://link.springer.com/article/10.1007/s42823-024-00796-0",
+    publicationDate: "Aug 29, 2024",
+    year: "2024",
+  },
+  {
+    title: "Carbonized Polymer Dot-Tannic Acid Nanoglue",
+    desc: "Nanotizing biosealant components offer a multitude of chemical functionalities for superior adhesion–cohesion, delivering unique properties for comprehensive wound healing that are otherwise impossible to achieve using commercial variants.",
+    image:
+      "https://res.cloudinary.com/manavkaushal/image/upload/v1746817629/Screenshot_2025-05-10_003631_lvmvly.png",
+    link: "https://onlinelibrary.wiley.com/doi/full/10.1002/smll.202405531",
+    publicationDate: "Aug 15, 2024",
+    year: "2024",
+  },
+  {
     title: "Multifunctional Self-Healing Carbon Dot–Gelatin Bioadhesive",
     desc: "Improved Tissue Adhesion with Simultaneous Drug Delivery, Optical Tracking, and Photoactivated Sterilization.",
     image:
@@ -73,24 +91,6 @@ const portfolioData = [
     link: "https://www.sciencedirect.com/science/article/abs/pii/S1385894721029831?via%3Dihub",
     publicationDate: "Aug 03, 2021",
     year: "2021",
-  },
-  {
-    title: "Carbonized Polymer Dot-Tannic Acid Nanoglue",
-    desc: "Nanotizing biosealant components offer a multitude of chemical functionalities for superior adhesion–cohesion, delivering unique properties for comprehensive wound healing that are otherwise impossible to achieve using commercial variants.",
-    image:
-      "https://res.cloudinary.com/manavkaushal/image/upload/v1746817629/Screenshot_2025-05-10_003631_lvmvly.png",
-    link: "https://onlinelibrary.wiley.com/doi/full/10.1002/smll.202405531",
-    publicationDate: "Aug 15, 2024",
-    year: "2024",
-  },
-  {
-    title: "Bromine-doped carbon dot",
-    desc: "Concentration-dependent multicolor emission is an unusual yet appealing photoluminescence property of various carbonaceous nanomaterials with interesting potential applications.",
-    image:
-      "https://res.cloudinary.com/manavkaushal/image/upload/v1746817780/Screenshot_2025-05-10_003921_nc0vga.png",
-    link: "https://link.springer.com/article/10.1007/s42823-024-00796-0",
-    publicationDate: "Aug 29, 2024",
-    year: "2024",
   },
 ];
 

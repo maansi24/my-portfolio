@@ -4,7 +4,7 @@ import { academicsData } from "@utils/data";
 import React from "react";
 import styled from "styled-components";
 
-const ListStyled = styled.ul`
+export const ListStyled = styled.ul`
   padding: 0.5rem;
 
   & li.title {

@@ -5,13 +5,22 @@ import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 
-const BaseCard = styled.div`
+export const BaseCard = styled.div`
+  position: relative;
   padding: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  transition: box-shadow 0.3s ease-in-out;
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0; /* slate-200 */
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in-out;
+
+  @media (min-width: 640px) {
+    padding: 1.5rem;
+  }
+
   &:hover {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    transform: scale(1.02);
   }
 `;
 

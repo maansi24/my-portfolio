@@ -8,6 +8,8 @@ import Head from "next/head";
 import React from "react";
 import AcademicBackground from "@sections/Academics";
 import Experiences from "@sections/Experiences";
+import Conference from "@sections/Conference";
+import AwardsAndHonors from "@sections/Awards";
 
 const Index: NextPage = () => {
   return (
@@ -27,7 +29,9 @@ const Index: NextPage = () => {
         <AcademicBackground />
         <Skills />
         <Portfolio />
+        <Conference />
         <Experiences />
+        <AwardsAndHonors />
         <Contact />
       </div>
     </>
