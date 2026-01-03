@@ -7,6 +7,16 @@ import { HiChevronUpDown } from "react-icons/hi2";
 
 const portfolioData = [
   {
+    title:
+      "An Autoclavable, Antifreezing, Fluorescent Biomass Derived DNA Dot Organogel for Simultaneous Self-Sterilization, ROS Regulation and Growth Factor Delivery in Wound Healing Application",
+    desc: "Biomass-derived gels offer benefits such as drug delivery and a moist environment, but they typically lack mechanical strength, therapeutic properties, monitoring capabilities, and autoclave resistance. Enhancing these attributes requires precise, cost-effective chemical modification of the biomass material. Herein, a chemical-free approach to transform biomass DNA from onion into DNA nanodots (DNA Dots) that serve as cross-linking cores, chemically bonded with polyethylene glycol diacrylate (PEGDA) through Michael addition, is presented.",
+    image:
+      "https://res.cloudinary.com/manavkaushal/image/upload/v1767423467/Screenshot_2026-01-03_122715_dothll.png",
+    link: "https://onlinelibrary.wiley.com/doi/abs/10.1002/mabi.202500265",
+    publicationDate: "Oct 16, 2025",
+    year: "2025",
+  },
+  {
     title: "Bromine-doped carbon dot",
     desc: "Concentration-dependent multicolor emission is an unusual yet appealing photoluminescence property of various carbonaceous nanomaterials with interesting potential applications.",
     image:

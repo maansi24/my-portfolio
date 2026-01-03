@@ -60,17 +60,16 @@ const Header = () => {
 
   const downloadCV = () => {
     if (window && typeof window !== undefined) {
-      window.open("/files/maansi_resume.pdf", "_blank");
+      window.open(
+        "/files/Maansi_Singla_PMRF_IIT Patna_Resume_v2.pdf",
+        "_blank"
+      );
     }
-  };
-
-  const toggleMobileMenu = () => {
-    setOpenMobileMenu((prevState) => !prevState);
   };
 
   return (
     <StyledHeader shrink={shrink}>
-      <div className="h-full px-4 mx-auto text-white max-w-7xl sm:px-6">
+      <div className="h-full px-4 mx-auto text-white max-w-7xl sm:px-6 pointer-events-auto">
         <div className="flex items-center justify-between h-full">
           <div className="logo-container">
             <Link href="/">
@@ -116,8 +115,8 @@ const Header = () => {
               <>
                 <Hamburger
                   toggled={openMobileMenu}
-                  toggle={toggleMobileMenu}
-                  size={30}
+                  toggle={setOpenMobileMenu}
+                  size={28}
                   duration={0.3}
                   distance="sm"
                   color={shrink ? "white" : "black"}
@@ -179,7 +178,7 @@ const Header = () => {
                                             shrink={shrink}
                                             isMobile={isMobile}
                                             onClick={() => {
-                                              toggleMobileMenu();
+                                              setOpenMobileMenu(false);
                                               scrollSmoothTo(item.triggerBy);
                                               setView(item.triggerBy);
                                             }}

@@ -44,7 +44,7 @@ const Layout = ({
   const { width } = useWindowSize();
   const { shrink } = useStateContext();
 
-  const [asideWidth, setAsideWidth] = useState(500);
+  const [asideWidth, setAsideWidth] = useState(600);
 
   const asideWidthFxn = (w: number) => {
     if (w < 1536) setAsideWidth(500);
