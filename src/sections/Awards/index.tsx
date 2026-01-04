@@ -5,8 +5,13 @@ import { BaseCard } from "@components/Cards";
 
 const awardsData = [
   {
+    id: 11,
+    content: "Best Poster Award at ICCS Conference, IIT Hyderabad",
+    year: "2025",
+  },
+  {
     id: 0,
-    content: "Best Poster Award at FINS Conference",
+    content: "Best Poster Award at FINS Conference, NIT Patna",
     year: "2024",
   },
   {
